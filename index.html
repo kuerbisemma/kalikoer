@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kalikoer – Chor in Immenstadt im Allgäu</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:   #275D6F;
+      --slate:  #778CA1;
+      --cream:  #F4F1ED;
+      --white:  #ffffff;
+      --dark:   #1a2630;
+      --text:   #333333;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── TOP BAR ─────────────────────────────────────────────── */
+    .top-bar {
+      background: var(--teal);
+      color: var(--white);
+      font-size: 13px;
+      padding: 8px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+    }
+    .top-bar a { color: var(--white); display: flex; align-items: center; gap: 6px; }
+    .top-bar a:hover { opacity: .8; }
+    .top-bar svg { width: 15px; height: 15px; fill: var(--white); flex-shrink: 0; }
+
+    /* ── HEADER / NAV ────────────────────────────────────────── */
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 72px;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-icon svg { width: 24px; height: 24px; fill: var(--white); }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--dark);
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-links a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+
+    /* hamburger – hidden on desktop */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 25px; height: 2px; background: var(--teal); border-radius: 2px; transition: .3s; }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    .hero {
+      background: var(--white);
+      padding: 90px 40px;
+    }
+    .hero-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-text .section-tag { margin-bottom: 10px; }
+    .hero-text h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--teal);
+      margin-bottom: 28px;
+      line-height: 1.15;
+    }
+    .hero-text p { color: #555; margin-bottom: 16px; line-height: 1.8; }
+    .hero-text .cta {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 14px 34px;
+      border-radius: 40px;
+      transition: background .2s, transform .2s;
+    }
+    .hero-text .cta:hover { background: #1a3d4d; transform: translateY(-2px); }
+    .hero-img {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-img { aspect-ratio: 16/9; }
+    }
+
+    /* ── SECTION GENERIC ─────────────────────────────────────── */
+    section { padding: 90px 40px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-tag {
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--slate);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .section-heading {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--teal);
+      margin-bottom: 28px;
+      line-height: 1.15;
+    }
+
+
+    /* ── CONDUCTOR ───────────────────────────────────────────── */
+    #das-sind-wir { background: var(--white); }
+    .conductor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .conductor-img {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .conductor-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .conductor-text p { margin-bottom: 16px; color: #555; }
+
+    /* ── REHEARSAL ───────────────────────────────────────────── */
+    #probe { background: var(--cream); }
+    .probe-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .probe-card {
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 48px 40px;
+    }
+    .probe-card h3 { font-size: 1.3rem; margin-bottom: 12px; font-weight: 800; }
+    .probe-card p { opacity: .9; }
+    .probe-card .time { font-size: 2rem; font-weight: 800; margin: 20px 0; }
+
+    /* ── COMMUNITY ───────────────────────────────────────────── */
+    #gemeinsam { background: var(--white); }
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .community-text p { margin-bottom: 16px; color: #555; }
+    .community-img {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .community-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── EVENTS / TERMINE ────────────────────────────────────── */
+    #termine {
+      background: #0d1a22;
+      color: var(--white);
+      padding: 100px 40px;
+    }
+    #termine .section-tag { color: #6fa8be; }
+    #termine .section-heading { color: var(--white); }
+
+    .termine-stage {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .poster-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+    .poster-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -24px;
+      background: radial-gradient(ellipse at center, rgba(39,93,111,0.55) 0%, transparent 70%);
+      border-radius: 20px;
+      z-index: 0;
+      filter: blur(18px);
+    }
+    .poster-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 320px;
+      border-radius: 14px;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.08),
+        0 20px 60px rgba(0,0,0,.7),
+        0 0 80px rgba(39,93,111,.4);
+      transition: transform .35s, box-shadow .35s;
+      display: block;
+    }
+    .poster-wrap img:hover {
+      transform: scale(1.03) translateY(-4px);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.12),
+        0 30px 80px rgba(0,0,0,.8),
+        0 0 120px rgba(39,93,111,.55);
+    }
+
+    .events-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .events-header {
+      margin-bottom: 12px;
+    }
+    .event-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+      transition: background .25s, transform .25s, border-color .25s;
+    }
+    .event-card:hover {
+      background: rgba(255,255,255,.09);
+      border-color: rgba(39,93,111,.6);
+      transform: translateX(6px);
+    }
+    .event-card-header {
+      background: linear-gradient(90deg, rgba(39,93,111,.7) 0%, rgba(39,93,111,.2) 100%);
+      color: var(--white);
+      padding: 20px 28px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .event-date {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: .65;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .event-title { font-size: 1.2rem; font-weight: 800; line-height: 1.25; }
+    .event-body { padding: 20px 28px; }
+    .event-body p { color: rgba(255,255,255,.65); margin-bottom: 16px; font-size: 0.9rem; line-height: 1.7; }
+    .event-meta { display: flex; flex-direction: column; gap: 8px; }
+    .event-meta span {
+      font-size: 13px;
+      color: #6fa8be;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .event-meta svg { width: 14px; height: 14px; fill: #6fa8be; flex-shrink: 0; margin-top: 2px; }
+
+    @media (max-width: 900px) {
+      .termine-stage { grid-template-columns: 1fr; }
+      .poster-wrap img { width: 100%; max-width: 300px; margin: 0 auto; }
+      .poster-wrap { text-align: center; }
+    }
+
+    /* ── INSTAGRAM ───────────────────────────────────────────── */
+    #instagram { background: var(--white); text-align: center; }
+    .instagram-placeholder {
+      max-width: 600px;
+      margin: 40px auto 0;
+      background: var(--cream);
+      border: 2px dashed var(--slate);
+      border-radius: 12px;
+      padding: 48px 32px;
+      color: var(--slate);
+    }
+    .instagram-placeholder svg { width: 48px; height: 48px; fill: var(--slate); margin-bottom: 16px; }
+    .instagram-placeholder p { margin-bottom: 20px; font-size: 14px; }
+    .instagram-placeholder a {
+      display: inline-block;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      padding: 12px 28px;
+      border-radius: 40px;
+    }
+
+    /* ── CONTACT FORM ────────────────────────────────────────── */
+    #kontakt { background: var(--cream); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-intro p { color: #555; margin-bottom: 16px; }
+    .contact-form { background: var(--white); border-radius: 12px; padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,.06); }
+    .form-group { margin-bottom: 22px; }
+    label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--dark); letter-spacing: .5px; }
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      background: var(--white);
+      color: var(--text);
+      transition: border-color .2s;
+      appearance: none;
+    }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--teal); }
+    textarea { height: 120px; resize: vertical; }
+    .select-wrapper { position: relative; }
+    .select-wrapper::after {
+      content: '▾';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--slate);
+      pointer-events: none;
+    }
+    .checkbox-group { display: flex; gap: 12px; align-items: flex-start; }
+    .checkbox-group input[type=checkbox] { margin-top: 3px; accent-color: var(--teal); width: 16px; height: 16px; flex-shrink: 0; }
+    .checkbox-group label { font-weight: 400; font-size: 13px; color: #666; }
+    .btn-submit {
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 14px 40px;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+      text-transform: uppercase;
+    }
+    .btn-submit:hover { background: #1a3d4d; transform: translateY(-2px); }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.7);
+      padding: 60px 40px 30px;
+    }
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo { color: var(--white); margin-bottom: 16px; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; }
+    .footer-col h4 { color: var(--white); font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; font-weight: 700; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 14px; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-col address { font-style: normal; font-size: 14px; line-height: 1.8; }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a:hover { color: var(--white); }
+
+    /* ── MOBILE NAV ──────────────────────────────────────────── */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      padding: 16px 40px 24px;
+      border-top: 1px solid #eee;
+      box-shadow: 0 8px 24px rgba(0,0,0,.1);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .conductor-grid,
+      .probe-grid,
+      .community-grid,
+      .contact-grid,
+      .events-grid,
+      .footer-grid { grid-template-columns: 1fr; }
+      .conductor-img,
+      .community-img { aspect-ratio: 16/9; }
+      section { padding: 64px 24px; }
+      nav { padding: 0 24px; }
+      .top-bar { padding: 8px 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="tel:+4915128287264">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    +49 (0) 151 28287264
+  </a>
+  <a href="mailto:info@kalikoer.com">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    info@kalikoer.com
+  </a>
+  <a href="https://www.instagram.com/kalikör" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    Instagram
+  </a>
+  <a href="#kontakt">Kontakt</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="#" class="logo">
+      <img src="images/logo.png" alt="kalikoer" style="height:52px; width:auto;" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#das-sind-wir">Das sind wir</a></li>
+      <li><a href="#probe">Probe</a></li>
+      <li><a href="#termine">Termine</a></li>
+      <li><a href="archiv.html">Archiv</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#das-sind-wir" onclick="toggleMenu()">Das sind wir</a>
+    <a href="#probe" onclick="toggleMenu()">Probe</a>
+    <a href="#termine" onclick="toggleMenu()">Termine</a>
+    <a href="archiv.html" onclick="toggleMenu()">Archiv</a>
+    <a href="#kontakt" onclick="toggleMenu()">Kontakt</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <div class="section-tag">Chor im Allgäu</div>
+      <h1>Chor in Immenstadt im Allgäu</h1>
+      <p>Mit Leidenschaft und Freude am gemeinsamen Singen vereint kalikoer junge Stimmen aus dem Allgäu zu einem einzigartigen Klangerlebnis. Unser Chor, bestehend aus engagierten Sängerinnen und Sängern mit einem Altersdurchschnitt von etwa 35 Jahren, verbindet moderne Chormusik mit geselligem Miteinander.</p>
+      <p>Ob gefühlvolle Balladen, schwungvolle Pop-Hits oder traditionelle Stücke – bei uns trifft musikalische Vielfalt auf pure Begeisterung.</p>
+      <a href="#kontakt" class="cta">Interesse am mitsingen? Melde dich bei uns!</a>
+    </div>
+    <div class="hero-img">
+      <img src="images/hero.png" alt="kalikoer – Chor in Immenstadt im Allgäu" />
+    </div>
+  </div>
+</section>
+
+<!-- CONDUCTOR / DAS SIND WIR -->
+<section id="das-sind-wir">
+  <div class="container">
+    <div class="conductor-grid">
+      <div class="conductor-img">
+        <img src="images/johannes.jpg" alt="Johannes Golda – Chorleiter" />
+      </div>
+      <div class="conductor-text">
+        <div class="section-tag">Das sind wir</div>
+        <h2 class="section-heading">Hallo!</h2>
+        <p>Ich bin Johannes, der Chorleiter von kalikoer. Musik begleitet mich schon seit vielen Jahren. Ich spiele verschiedene Instrumente, aktiv vor allem Klavier und Orgel, und singe selbst in verschiedenen Chören und Ensembles. Ich bin kein Profi, habe aber durch die langjährige Praxis viel Erfahrung gesammelt 😊</p>
+        <p>Bei kalikoer steht für mich vor allem die Freude am gemeinsamen Singen im Mittelpunkt. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die meine Leidenschaft zur Musik teilen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBE / REHEARSAL -->
+<section id="probe">
+  <div class="container">
+    <div class="probe-grid">
+      <div class="conductor-text">
+        <div class="section-tag">Probe</div>
+        <h2 class="section-heading">Probe.</h2>
+        <p style="color:#555; margin-bottom:16px;">Geprägt von positiver Energie, Freude und Gemeinschaft:</p>
+        <p style="color:#555; margin-bottom:16px;">Unsere Proben finden immer <strong>dienstags um 19:10 Uhr</strong> statt.</p>
+        <p style="color:#555;">Wir arbeiten an diversen Stücken und bereiten uns so auf zwei bis drei Konzerte im Jahr vor.</p>
+      </div>
+      <div>
+        <img src="images/konzert2025.jpg" alt="Kalikoer Konzert 2025" style="width:100%; border-radius:12px; display:block; margin-bottom:16px; object-fit:cover;" />
+        <div class="probe-card">
+          <h3>Probenzeit</h3>
+          <div class="time">Dienstags · 19:10 Uhr</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY / GEMEINSAM -->
+<section id="gemeinsam">
+  <div class="container">
+    <div class="community-grid">
+      <div class="community-text">
+        <div class="section-tag">Gemeinschaft</div>
+        <h2 class="section-heading">Gemeinsam.</h2>
+        <p>Nach dem gemeinsamen Singen lassen wir den Abend gerne entspannt ausklingen. Oft sitzen wir noch gemütlich zusammen, plaudern und genießen ein kühles Getränk – ungezwungen und ohne Aufwand.</p>
+        <p>Auch außerhalb der Proben unternehmen wir gerne etwas zusammen. Ob wir gemeinsam ein Konzert besuchen, uns eine Ausstellung anschauen oder einfach spontan etwas unternehmen – bei uns geht es unkompliziert und herzlich zu. Uns verbindet nicht nur die Musik, sondern auch die Freude an gemeinsamen Erlebnissen.</p>
+        <p>Bei kalikoer fühlt sich jeder wohl, und genau das macht unseren Chor so besonders.</p>
+      </div>
+      <div class="community-img">
+        <img src="images/gemeinsam.jpg" alt="Gemeinsam bei kalikoer" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMINE / EVENTS -->
+<section id="termine">
+  <div class="termine-stage">
+
+    <!-- Poster -->
+    <div class="poster-wrap">
+      <img src="images/poster.jpg" alt="Konzertplakat – Are you still listening?" />
+    </div>
+
+    <!-- Cards -->
+    <div class="events-stack">
+      <div class="events-header">
+        <div class="section-tag">Termine &amp; Auftritte</div>
+        <h2 class="section-heading">Termine &amp; Auftritte.</h2>
+      </div>
+
+      <!-- Event 1 -->
+      <div class="event-card">
+        <div class="event-card-header">
+          <div class="event-date">17. Juli 2026</div>
+          <div class="event-title">Are you still listening? – Folge 1</div>
+        </div>
+        <div class="event-body">
+          <p>Wer kennt es nicht: „Nur noch eine Folge..nur noch kurz weiterschauen.."?! Amazon, Netflix und Co. braucht ihr an diesem Abend nicht. Wir bringen die größten Songs aus Serien, Streaming-Highlights und Blockbuster live auf die Bühne. Ein Konzert wie ein perfekter Serienabend: mal laut, mal leise, mal episch. Popcorn gibt's kein, aber dafür Gänsehaut, ganz viel Freude und Melodien, die noch lange nachklingen. Ein Live-Stream für eure Ohren!</p>
+          <div class="event-meta">
+            <span>
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Sonthofener Str. 41, 87544 Blaichach
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+              Parkplatz am Bahnhof (Immenstädter Str. 6) oder Weidachstraße
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event-card">
+        <div class="event-card-header">
+          <div class="event-date">19. Juli 2026</div>
+          <div class="event-title">Are you still listening? – Folge 2</div>
+        </div>
+        <div class="event-body">
+          <p>Ihr dachtet, eine Folge reicht? Pustekuchen! Auch heute Abend braucht ihr kein TV und der Tatort darf heute auch ausfallen. Wir liefern erneut die größten Songs aus Serien, Streaming-Highlights und Blockbustern. Für alle, die uns am Freitag nicht hören, gibt's heute Folge 2 unseres Konzerts.</p>
+          <div class="event-meta">
+            <span>
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Erlöserkirche Immenstadt
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section id="instagram">
+  <div class="container">
+    <div class="section-tag">Social Media</div>
+    <h2 class="section-heading">Folge uns auf Instagram!</h2>
+    <div class="instagram-placeholder">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <p>Sie sehen gerade einen Platzhalterinhalt. Um auf den eigentlichen Inhalt zuzugreifen, klicken Sie auf den Button unten.</p>
+      <a href="https://www.instagram.com/kalikör" target="_blank" rel="noopener">Zu Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM / KONTAKT -->
+<section id="kontakt">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <div class="section-tag">Kontakt</div>
+        <h2 class="section-heading">Anfragen? Anregungen? Lust, mitzumachen?</h2>
+        <p style="font-size:1.1rem; color:#444; font-weight:600; margin-bottom:20px;">Meld' dich bei uns.</p>
+        <p>Du suchst einen Chor für deinen Geburtstag, deine Hochzeit oder deine Scheidung? Oder hast du Lust, mitzusingen? Dann melde dich gerne. Zurzeit suchen wir vor allem Männerstimmen. Wenn du Freude am Singen hast und Gesangserfahrung hast, beispielsweise im Schulchor, anderen Ensembles o.ä., dann bist du bei uns genau richtig!</p>
+      </div>
+      <div class="contact-form">
+        <form onsubmit="return false;">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" placeholder="Dein Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail *</label>
+            <input type="email" id="email" placeholder="deine@email.de" required />
+          </div>
+          <div class="form-group">
+            <label for="stimme">Ich singe</label>
+            <div class="select-wrapper">
+              <select id="stimme">
+                <option value="">Bitte wählen</option>
+                <option value="sopran">Sopran</option>
+                <option value="alt">Alt</option>
+                <option value="tenor">Tenor</option>
+                <option value="bass">Bass</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="nachricht">Nachricht</label>
+            <textarea id="nachricht" placeholder="Deine Nachricht..."></textarea>
+          </div>
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="datenschutz" required />
+              <label for="datenschutz">Die Hinweise zum Datenschutz habe ich gelesen. Ich bin damit einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verarbeitet werden. *</label>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit">Senden</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHIV placeholder -->
+<div id="archiv"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="images/logo.png" alt="kalikoer" style="height:44px; width:auto; filter:brightness(0) invert(1);" />
+      </div>
+      <p>kalikoer ist ein junger Chor im Allgäu (Raum Kempten, Immenstadt, Sonthofen). Geprobt wird dienstags in Immenstadt.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#das-sind-wir">Das sind wir</a></li>
+        <li><a href="#probe">Probe</a></li>
+        <li><a href="#termine">Termine</a></li>
+        <li><a href="archiv.html">Archiv</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <address>
+        <a href="mailto:info@kalikoer.com">info@kalikoer.com</a><br/>
+        <a href="tel:+4915128287264">+49 (0) 151 28287264</a><br/><br/>
+        Kalvarienbergstr. 27<br/>
+        87509 Immenstadt im Allgäu<br/><br/>
+        <a href="https://www.instagram.com/kalikör" target="_blank" rel="noopener">Instagram: Kalikör</a>
+      </address>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Kalikoer</span>
+    <div class="footer-bottom-links">
+      <a href="#home">Home</a>
+      <a href="#">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── COOKIE BANNER ──────────────────────────────────────── -->
+<div id="cookieBanner" style="
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9000;
+  background: #1a2630;
+  color: rgba(255,255,255,.85);
+  padding: 20px 32px;
+  box-shadow: 0 -4px 32px rgba(0,0,0,.25);
+  border-top: 3px solid #275D6F;
+  animation: slideUp .35s ease;
+">
+  <style>
+    @keyframes slideUp {
+      from { transform: translateY(100%); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+    .cookie-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cookie-text { flex: 1; min-width: 240px; font-size: 14px; line-height: 1.6; }
+    .cookie-text strong { color: #fff; }
+    .cookie-text a { color: #6fa8be; text-decoration: underline; }
+    .cookie-text a:hover { color: #fff; }
+    .cookie-btns { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
+    .cookie-btn {
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      cursor: pointer;
+      border: none;
+      transition: background .2s, transform .15s;
+      white-space: nowrap;
+    }
+    .cookie-btn:hover { transform: translateY(-1px); }
+    .cookie-btn-accept { background: #275D6F; color: #fff; }
+    .cookie-btn-accept:hover { background: #1a3d4d; }
+    .cookie-btn-decline { background: transparent; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.25); }
+    .cookie-btn-decline:hover { background: rgba(255,255,255,.08); color: #fff; }
+  </style>
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>Wir verwenden Cookies.</strong>
+      Diese Website verwendet technisch notwendige Cookies, um grundlegende Funktionen zu gewährleisten.
+      Weitere Informationen findest du in unserem <a href="impressum.html">Impressum</a>.
+    </div>
+    <div class="cookie-btns">
+      <button class="cookie-btn cookie-btn-accept" onclick="setCookie('accepted')">Akzeptieren</button>
+      <button class="cookie-btn cookie-btn-decline" onclick="setCookie('declined')">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // Cookie banner
+  function setCookie(choice) {
+    localStorage.setItem('cookieConsent', choice);
+    document.getElementById('cookieBanner').style.display = 'none';
+  }
+  if (!localStorage.getItem('cookieConsent')) {
+    document.getElementById('cookieBanner').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

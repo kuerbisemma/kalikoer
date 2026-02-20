@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archiv – kalikoer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:  #275D6F;
+      --slate: #778CA1;
+      --cream: #F4F1ED;
+      --white: #ffffff;
+      --dark:  #1a2630;
+      --text:  #333333;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── TOP BAR ─────────────────────────────────────────────── */
+    .top-bar {
+      background: var(--teal);
+      color: var(--white);
+      font-size: 13px;
+      padding: 8px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+    }
+    .top-bar a { color: var(--white); display: flex; align-items: center; gap: 6px; }
+    .top-bar a:hover { opacity: .8; }
+    .top-bar svg { width: 15px; height: 15px; fill: var(--white); flex-shrink: 0; }
+
+    /* ── HEADER / NAV ────────────────────────────────────────── */
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--dark);
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color .2s, color .2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--teal); border-bottom-color: var(--teal); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 25px; height: 2px; background: var(--teal); border-radius: 2px; }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      padding: 16px 40px 24px;
+      border-top: 1px solid #eee;
+      box-shadow: 0 8px 24px rgba(0,0,0,.1);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ── PAGE HERO ───────────────────────────────────────────── */
+    .page-hero {
+      background: var(--white);
+      padding: 72px 40px 60px;
+      border-bottom: 1px solid #e8e4df;
+    }
+    .page-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-tag {
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--slate);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--teal);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      color: #666;
+      max-width: 560px;
+      font-size: 1.05rem;
+    }
+
+    /* ── ARCHIVE GRID ────────────────────────────────────────── */
+    .archive-section {
+      padding: 72px 40px 100px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .year-group { margin-bottom: 64px; }
+    .year-label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--slate);
+      padding-bottom: 16px;
+      border-bottom: 2px solid #e8e4df;
+      margin-bottom: 32px;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .archive-card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.07);
+      transition: transform .28s, box-shadow .28s;
+      display: flex;
+      flex-direction: column;
+    }
+    .archive-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.13);
+    }
+
+    /* Portrait poster cards */
+    .archive-card.poster .card-img {
+      aspect-ratio: 3/4;
+    }
+    /* Landscape photo cards */
+    .archive-card.photo .card-img {
+      aspect-ratio: 4/3;
+    }
+    /* Wide cards spanning 2 columns */
+    .archive-card.wide {
+      grid-column: span 2;
+    }
+    .archive-card.wide .card-img {
+      aspect-ratio: 16/7;
+    }
+
+    .card-img {
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .archive-card:hover .card-img img { transform: scale(1.04); }
+
+    .card-body {
+      padding: 24px 26px 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-date {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-tag {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: var(--cream);
+      color: var(--slate);
+      align-self: flex-start;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.7);
+      padding: 60px 40px 30px;
+    }
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto 48px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+    }
+    .footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; }
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 14px; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-col address { font-style: normal; font-size: 14px; line-height: 1.8; }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a:hover { color: var(--white); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .archive-grid { grid-template-columns: 1fr 1fr; }
+      .archive-card.wide { grid-column: span 2; }
+      .top-bar { padding: 8px 24px; }
+      nav { padding: 0 24px; }
+      .page-hero, .archive-section { padding-left: 24px; padding-right: 24px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+    @media (max-width: 580px) {
+      .archive-grid { grid-template-columns: 1fr; }
+      .archive-card.wide { grid-column: span 1; }
+      .archive-card.wide .card-img { aspect-ratio: 4/3; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a href="tel:+4915128287264">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    +49 (0) 151 28287264
+  </a>
+  <a href="mailto:info@kalikoer.com">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    info@kalikoer.com
+  </a>
+  <a href="https://www.instagram.com/kalikör" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    Instagram
+  </a>
+  <a href="index.html#kontakt">Kontakt</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="kalikoer" style="height:52px; width:auto;" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#das-sind-wir">Das sind wir</a></li>
+      <li><a href="index.html#probe">Probe</a></li>
+      <li><a href="index.html#termine">Termine</a></li>
+      <li><a href="archiv.html" class="active">Archiv</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#das-sind-wir" onclick="toggleMenu()">Das sind wir</a>
+    <a href="index.html#probe" onclick="toggleMenu()">Probe</a>
+    <a href="index.html#termine" onclick="toggleMenu()">Termine</a>
+    <a href="archiv.html" onclick="toggleMenu()">Archiv</a>
+    <a href="index.html#kontakt" onclick="toggleMenu()">Kontakt</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-tag">Rückblick</div>
+    <h1>Archiv.</h1>
+    <p>Alle vergangenen und kommenden Auftritte, Konzerte und Aktionen von kalikoer im Überblick.</p>
+  </div>
+</div>
+
+<!-- ARCHIVE CONTENT -->
+<div class="archive-section">
+
+  <!-- 2026 -->
+  <div class="year-group">
+    <div class="year-label">2026</div>
+    <div class="archive-grid">
+
+      <div class="archive-card poster">
+        <div class="card-img">
+          <img src="images/poster.jpg" alt="Are you still listening?" />
+        </div>
+        <div class="card-body">
+          <div class="card-date">17. &amp; 19. Juli 2026</div>
+          <div class="card-title">Are you still listening?</div>
+          <p class="card-desc">Im Juli 2026 singt der junge Chor kalikoer aus Immenstadt bekannte Titel aus Streaming, Serien und Filmklassiker. Zwei Abende voller Gänsehaut und großer Melodien – Folge 1 in Blaichach, Folge 2 in der Erlöserkirche Immenstadt.</p>
+          <span class="card-tag">Konzert</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2025 -->
+  <div class="year-group">
+    <div class="year-label">2025</div>
+    <div class="archive-grid">
+
+      <div class="archive-card photo">
+        <div class="card-img">
+          <img src="images/archiv_konzert2025.jpg" alt="Konzert Dezember 2025 St. Michael" />
+        </div>
+        <div class="card-body">
+          <div class="card-date">6. Dezember 2025</div>
+          <div class="card-title">Orgelmatinee – St. Nikolaus Immenstadt</div>
+          <p class="card-desc">Am 06.12.2025 sang Kalikör weihnachtliche Lieder zur Adventszeit im Rahmen der Orgelmatinee in der Kirche St. Nikolaus in Immenstadt.</p>
+          <span class="card-tag">Auftritt</span>
+        </div>
+      </div>
+
+      <div class="archive-card poster">
+        <div class="card-img">
+          <img src="images/archiv_orgelmatinee.jpg" alt="Orgelmatinee Dezember 2025" />
+        </div>
+        <div class="card-body">
+          <div class="card-date">6. Dezember 2025</div>
+          <div class="card-title">Adventskonzert</div>
+          <p class="card-desc">Weihnachtliche Klänge in der Kirche – kalikoer gestaltete die Orgelmatinee in der Adventszeit musikalisch mit.</p>
+          <span class="card-tag">Konzert</span>
+        </div>
+      </div>
+
+      <div class="archive-card poster">
+        <div class="card-img">
+          <img src="images/archiv_seeweihnacht.jpg" alt="Seeweihnacht Immenstadt 2025" />
+        </div>
+        <div class="card-body">
+          <div class="card-date">13. Dezember 2025</div>
+          <div class="card-title">Bühler Seeweihnacht</div>
+          <p class="card-desc">Am 13.12.2025 sang Kalikör weihnachtliche Lieder zur Adventszeit im Rahmen der Bühler Seeweihnacht in Immenstadt.</p>
+          <span class="card-tag">Auftritt</span>
+        </div>
+      </div>
+
+      <div class="archive-card photo wide">
+        <div class="card-img">
+          <img src="images/archiv_spende.jpg" alt="Spende an IG OMa e.V. und Allgäu Hospiz" />
+        </div>
+        <div class="card-body">
+          <div class="card-date">Herbst 2025</div>
+          <div class="card-title">Spende an IG OMa e.V. und Allgäu Hospiz</div>
+          <p class="card-desc">kalikoer spendet einen Teil der Konzerteinnahmen an die IG OMa e.V. und das Allgäu Hospiz – Musik, die Gutes tut.</p>
+          <span class="card-tag">Soziales Engagement</span>
+        </div>
+      </div>
+
+      <div class="archive-card poster wide">
+        <div class="card-img">
+          <img src="images/archiv_sept2025.jpg" alt="Konzerte September 2025" />
+        </div>
+        <div class="card-body">
+          <div class="card-date">September 2025</div>
+          <div class="card-title">Zwei Konzerte im September</div>
+          <p class="card-desc">Kalikoer, ein junger Chor aus Immenstadt im Allgäu, sang im September 2025 zwei Konzerte – ein Abend voller Energie, Emotionen und unvergesslicher Melodien.</p>
+          <span class="card-tag">Konzert</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="kalikoer" style="height:44px; width:auto; filter:brightness(0) invert(1);" />
+      <p>kalikoer ist ein junger Chor im Allgäu (Raum Kempten, Immenstadt, Sonthofen). Geprobt wird dienstags in Immenstadt.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#das-sind-wir">Das sind wir</a></li>
+        <li><a href="index.html#probe">Probe</a></li>
+        <li><a href="index.html#termine">Termine</a></li>
+        <li><a href="archiv.html">Archiv</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <address>
+        <a href="mailto:info@kalikoer.com">info@kalikoer.com</a><br/>
+        <a href="tel:+4915128287264">+49 (0) 151 28287264</a><br/><br/>
+        Kalvarienbergstr. 27<br/>
+        87509 Immenstadt im Allgäu<br/><br/>
+        <a href="https://www.instagram.com/kalikör" target="_blank" rel="noopener">Instagram: Kalikör</a>
+      </address>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Kalikoer</span>
+    <div class="footer-bottom-links">
+      <a href="index.html">Home</a>
+      <a href="#">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── COOKIE BANNER ──────────────────────────────────────── -->
+<div id="cookieBanner" style="
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9000;
+  background: #1a2630;
+  color: rgba(255,255,255,.85);
+  padding: 20px 32px;
+  box-shadow: 0 -4px 32px rgba(0,0,0,.25);
+  border-top: 3px solid #275D6F;
+  animation: slideUp .35s ease;
+">
+  <style>
+    @keyframes slideUp {
+      from { transform: translateY(100%); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+    .cookie-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+    }
+    .cookie-text { flex: 1; min-width: 240px; font-size: 14px; line-height: 1.6; }
+    .cookie-text strong { color: #fff; }
+    .cookie-text a { color: #6fa8be; text-decoration: underline; }
+    .cookie-text a:hover { color: #fff; }
+    .cookie-btns { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
+    .cookie-btn {
+      padding: 10px 24px; border-radius: 40px; font-size: 13px; font-weight: 700;
+      letter-spacing: .5px; cursor: pointer; border: none;
+      transition: background .2s, transform .15s; white-space: nowrap;
+    }
+    .cookie-btn:hover { transform: translateY(-1px); }
+    .cookie-btn-accept { background: #275D6F; color: #fff; }
+    .cookie-btn-accept:hover { background: #1a3d4d; }
+    .cookie-btn-decline { background: transparent; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.25); }
+    .cookie-btn-decline:hover { background: rgba(255,255,255,.08); color: #fff; }
+  </style>
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <strong>Wir verwenden Cookies.</strong>
+      Diese Website verwendet technisch notwendige Cookies, um grundlegende Funktionen zu gewährleisten.
+      Weitere Informationen findest du in unserem <a href="impressum.html">Impressum</a>.
+    </div>
+    <div class="cookie-btns">
+      <button class="cookie-btn cookie-btn-accept" onclick="setCookie('accepted')">Akzeptieren</button>
+      <button class="cookie-btn cookie-btn-decline" onclick="setCookie('declined')">Nur notwendige</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // Cookie banner
+  function setCookie(choice) {
+    localStorage.setItem('cookieConsent', choice);
+    document.getElementById('cookieBanner').style.display = 'none';
+  }
+  if (!localStorage.getItem('cookieConsent')) {
+    document.getElementById('cookieBanner').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
