@@ -4,206 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Impressum – kalikoer</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --teal:  #275D6F;
-      --slate: #778CA1;
-      --cream: #F4F1ED;
-      --white: #ffffff;
-      --dark:  #1a2630;
-      --text:  #333333;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    a { color: var(--teal); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ── TOP BAR ─────────────────────────────────────────────── */
-    .top-bar {
-      background: var(--teal);
-      color: var(--white);
-      font-size: 13px;
-      padding: 8px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 24px;
-    }
-    .top-bar a { color: var(--white); display: flex; align-items: center; gap: 6px; text-decoration: none; }
-    .top-bar a:hover { opacity: .8; }
-    .top-bar svg { width: 15px; height: 15px; fill: var(--white); flex-shrink: 0; }
-
-    /* ── HEADER / NAV ────────────────────────────────────────── */
-    header {
-      background: var(--white);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 12px rgba(0,0,0,.08);
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-      height: 72px;
-    }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--dark);
-      padding: 4px 0;
-      border-bottom: 2px solid transparent;
-      transition: border-color .2s, color .2s;
-      text-decoration: none;
-    }
-    .nav-links a:hover { color: var(--teal); border-bottom-color: var(--teal); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { display: block; width: 25px; height: 2px; background: var(--teal); border-radius: 2px; }
-    .mobile-menu {
-      display: none; flex-direction: column;
-      background: var(--white); padding: 16px 40px 24px;
-      border-top: 1px solid #eee; box-shadow: 0 8px 24px rgba(0,0,0,.1);
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      padding: 12px 0; border-bottom: 1px solid #f0f0f0;
-      font-size: 14px; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; color: var(--dark); text-decoration: none;
-    }
-    .mobile-menu a:last-child { border-bottom: none; }
-
-    /* ── PAGE HERO ───────────────────────────────────────────── */
-    .page-hero {
-      background: var(--white);
-      padding: 72px 40px 60px;
-      border-bottom: 1px solid #e8e4df;
-    }
-    .page-hero-inner { max-width: 800px; margin: 0 auto; }
-    .section-tag {
-      font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--slate); font-weight: 700; margin-bottom: 10px;
-    }
-    .page-hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800; color: var(--teal); line-height: 1.1;
-    }
-
-    /* ── CONTENT ─────────────────────────────────────────────── */
-    .impressum-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 64px 40px 100px;
-    }
-
-    .impressum-content h2 {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--teal);
-      margin: 40px 0 8px;
-      letter-spacing: .3px;
-    }
-    .impressum-content h2:first-child { margin-top: 0; }
-
-    .impressum-content p {
-      color: #555;
-      margin-bottom: 8px;
-    }
-
-    .impressum-content ul {
-      color: #555;
-      padding-left: 20px;
-      margin-bottom: 8px;
-    }
-    .impressum-content ul li { margin-bottom: 4px; }
-
-    hr.divider {
-      border: none;
-      border-top: 1px solid #e0dbd5;
-      margin: 48px 0;
-    }
-
-    /* ── FOOTER ──────────────────────────────────────────────── */
-    footer {
-      background: var(--dark);
-      color: rgba(255,255,255,.7);
-      padding: 60px 40px 30px;
-    }
-    .footer-grid {
-      max-width: 1100px; margin: 0 auto 48px;
-      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
-    }
-    .footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; }
-    .footer-col h4 {
-      color: var(--white); font-size: 13px; letter-spacing: 1.5px;
-      text-transform: uppercase; margin-bottom: 18px; font-weight: 700;
-    }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul li a { font-size: 14px; transition: color .2s; color: inherit; text-decoration: none; }
-    .footer-col ul li a:hover { color: var(--white); }
-    .footer-col address { font-style: normal; font-size: 14px; line-height: 1.8; }
-    .footer-col address a { color: inherit; text-decoration: none; }
-    .footer-bottom {
-      max-width: 1100px; margin: 0 auto;
-      border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px;
-      display: flex; justify-content: space-between; align-items: center; font-size: 13px;
-    }
-    .footer-bottom-links { display: flex; gap: 24px; }
-    .footer-bottom-links a { color: inherit; text-decoration: none; }
-    .footer-bottom-links a:hover { color: var(--white); }
-
-    /* ── RESPONSIVE ──────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .top-bar, nav { padding-left: 24px; padding-right: 24px; }
-      .page-hero, .impressum-content { padding-left: 24px; padding-right: 24px; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-    }
-
-    /* ── COOKIE BANNER ───────────────────────────────────────── */
-    @keyframes slideUp {
-      from { transform: translateY(100%); opacity: 0; }
-      to   { transform: translateY(0);    opacity: 1; }
-    }
-    .cookie-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
-    }
-    .cookie-text { flex: 1; min-width: 240px; font-size: 14px; line-height: 1.6; }
-    .cookie-text strong { color: #fff; }
-    .cookie-text a { color: #6fa8be; text-decoration: underline; }
-    .cookie-text a:hover { color: #fff; }
-    .cookie-btns { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
-    .cookie-btn {
-      padding: 10px 24px; border-radius: 40px; font-size: 13px; font-weight: 700;
-      letter-spacing: .5px; cursor: pointer; border: none;
-      transition: background .2s, transform .15s; white-space: nowrap;
-    }
-    .cookie-btn:hover { transform: translateY(-1px); }
-    .cookie-btn-accept { background: #275D6F; color: #fff; }
-    .cookie-btn-accept:hover { background: #1a3d4d; }
-    .cookie-btn-decline { background: transparent; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.25); }
-    .cookie-btn-decline:hover { background: rgba(255,255,255,.08); color: #fff; }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="page-impressum">
 
 <!-- TOP BAR -->
 <div class="top-bar">
@@ -226,7 +29,7 @@
 <header>
   <nav>
     <a href="index.html">
-      <img src="images/logo.png" alt="kalikoer" style="height:52px; width:auto;" />
+      <img src="images/logo.png" alt="kalikoer" class="logo-img" />
     </a>
     <ul class="nav-links">
       <li><a href="index.html#das-sind-wir">Das sind wir</a></li>
@@ -301,7 +104,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo.png" alt="kalikoer" style="height:44px; width:auto; filter:brightness(0) invert(1);" />
+      <img src="images/logo.png" alt="kalikoer" class="footer-logo-img" />
       <p>kalikoer ist ein junger Chor im Allgäu (Raum Kempten, Immenstadt, Sonthofen). Geprobt wird dienstags in Immenstadt.</p>
     </div>
     <div class="footer-col">
@@ -337,18 +140,7 @@
 </footer>
 
 <!-- COOKIE BANNER -->
-<div id="cookieBanner" style="
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 9000;
-  background: #1a2630;
-  color: rgba(255,255,255,.85);
-  padding: 20px 32px;
-  box-shadow: 0 -4px 32px rgba(0,0,0,.25);
-  border-top: 3px solid #275D6F;
-  animation: slideUp .35s ease;
-">
+<div id="cookieBanner" class="cookie-banner">
   <div class="cookie-inner">
     <div class="cookie-text">
       <strong>Wir verwenden Cookies.</strong>
