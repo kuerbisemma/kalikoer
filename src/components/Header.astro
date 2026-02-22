@@ -1,0 +1,32 @@
+---
+interface Props {
+  activePage?: 'home' | 'archiv' | 'impressum';
+}
+
+const { activePage = 'home' } = Astro.props;
+---
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="/images/logo.png" alt="kalikoer" class="logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#das-sind-wir">Das sind wir</a></li>
+      <li><a href="index.html#probe">Probe</a></li>
+      <li><a href="index.html#termine">Termine</a></li>
+      <li><a href="archiv.html" class={activePage === 'archiv' ? 'active' : undefined}>Archiv</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#das-sind-wir" onclick="toggleMenu()">Das sind wir</a>
+    <a href="index.html#probe" onclick="toggleMenu()">Probe</a>
+    <a href="index.html#termine" onclick="toggleMenu()">Termine</a>
+    <a href="archiv.html" onclick="toggleMenu()">Archiv</a>
+    <a href="index.html#kontakt" onclick="toggleMenu()">Kontakt</a>
+  </div>
+</header>

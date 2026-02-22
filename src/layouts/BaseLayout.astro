@@ -1,0 +1,66 @@
+---
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+interface Props {
+  title: string;
+  bodyClass: 'page-index' | 'page-archiv' | 'page-impressum';
+  activePage?: 'home' | 'archiv' | 'impressum';
+  contactHref?: string;
+}
+
+const { title, bodyClass, activePage = 'home', contactHref = 'index.html#kontakt' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class={bodyClass}>
+    <TopBar contactHref={contactHref} />
+    <Header activePage={activePage} />
+    <slot />
+    <Footer />
+    <CookieBanner />
+
+    <script is:inline>
+      function toggleMenu() {
+        document.getElementById('mobileMenu')?.classList.toggle('open');
+      }
+
+      document.addEventListener('click', function (e) {
+        const menu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
+
+        if (!menu || !hamburger) {
+          return;
+        }
+
+        if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+          menu.classList.remove('open');
+        }
+      });
+
+      function setCookie(choice) {
+        localStorage.setItem('cookieConsent', choice);
+        const banner = document.getElementById('cookieBanner');
+        if (banner) {
+          banner.style.display = 'none';
+        }
+      }
+
+      if (!localStorage.getItem('cookieConsent')) {
+        const banner = document.getElementById('cookieBanner');
+        if (banner) {
+          banner.style.display = 'block';
+        }
+      }
+    </script>
+  </body>
+</html>

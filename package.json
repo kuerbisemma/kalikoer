@@ -1,0 +1,14 @@
+{
+  "name": "kalikoer-astro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:assets": "node scripts/sync-assets.mjs",
+    "dev": "npm run sync:assets && astro dev",
+    "build": "npm run sync:assets && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.2.0"
+  }
+}
