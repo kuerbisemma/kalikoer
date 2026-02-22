@@ -14,3 +14,37 @@
     </div>
   </div>
 </section>
+
+<style>
+  #gemeinsam { background: var(--white); }
+
+  .community-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .community-text p { margin-bottom: 16px; color: #555; }
+
+  .community-img {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+
+  .community-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  @media (max-width: 900px) {
+    .community-grid { grid-template-columns: 1fr; }
+    .community-img { aspect-ratio: 16/9; }
+
+    .community-img {
+      width: calc(100% + 48px);
+      max-width: none;
+      margin-left: -24px;
+      margin-right: -24px;
+      border-radius: 0;
+    }
+  }
+</style>

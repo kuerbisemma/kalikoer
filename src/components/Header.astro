@@ -30,3 +30,78 @@ const { activePage = 'home' } = Astro.props;
     <a href="index.html#kontakt" onclick="toggleMenu()">Kontakt</a>
   </div>
 </header>
+
+<style>
+  header {
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 72px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img { height: 52px; width: auto; }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--dark);
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s, color .2s;
+    text-decoration: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { display: block; width: 25px; height: 2px; background: var(--teal); border-radius: 2px; transition: .3s; }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--white);
+    padding: 16px 40px 24px;
+    border-top: 1px solid #eee;
+    box-shadow: 0 8px 24px rgba(0,0,0,.1);
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .mobile-menu a:last-child { border-bottom: none; }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    nav { padding: 0 24px; }
+  }
+</style>

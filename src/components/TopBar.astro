@@ -21,3 +21,47 @@ const { contactHref = 'index.html#kontakt' } = Astro.props;
   </a>
   <a href={contactHref}>Kontakt</a>
 </div>
+
+<style>
+  .top-bar {
+    background: var(--teal);
+    color: var(--white);
+    font-size: 13px;
+    padding: 8px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+  }
+
+  .top-bar a {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+
+  .top-bar a:hover { opacity: .8; }
+  .top-bar svg { width: 15px; height: 15px; fill: var(--white); flex-shrink: 0; }
+
+  @media (max-width: 900px) {
+    .top-bar { padding: 8px 24px; }
+  }
+
+  @media (max-width: 700px) {
+    .top-bar {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      padding: 8px 16px;
+    }
+
+    .top-bar a[href^='tel:'] { flex: 1 1 100%; }
+
+    .top-bar a {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+  }
+</style>

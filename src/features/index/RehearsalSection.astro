@@ -25,3 +25,104 @@
     </div>
   </div>
 </section>
+
+<style>
+  #probe { background: var(--cream); }
+
+  .probe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .probe-intro { color: #555; margin-bottom: 16px; }
+  .probe-intro-last { color: #555; }
+
+  .probe-card {
+    background: var(--teal);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 36px 32px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .probe-card-kicker {
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: .8;
+  }
+
+  .probe-card h3 { font-size: 1.5rem; margin-bottom: 0; font-weight: 800; line-height: 1.2; }
+  .probe-card p { opacity: .9; }
+
+  .probe-card .time {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    margin: 4px 0 6px;
+    line-height: 1.1;
+  }
+
+  .probe-card-points {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    margin: 2px 0 12px;
+    padding: 0;
+    font-size: 0.98rem;
+    line-height: 1.45;
+  }
+
+  .probe-card-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    opacity: .95;
+  }
+
+  .probe-card-points li::before {
+    content: '✓';
+    font-weight: 800;
+    line-height: 1;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .probe-card-link {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1px solid var(--white);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    transition: transform .2s, opacity .2s;
+  }
+
+  .probe-card-link:hover {
+    transform: translateY(-2px);
+    opacity: .9;
+  }
+
+  .probe-photo { width: 100%; border-radius: 12px; display: block; margin-bottom: 16px; object-fit: cover; }
+
+  @media (max-width: 900px) {
+    .probe-grid { grid-template-columns: 1fr; }
+
+    .probe-photo {
+      width: calc(100% + 48px);
+      max-width: none;
+      margin-left: -24px;
+      margin-right: -24px;
+      border-radius: 0;
+    }
+  }
+</style>

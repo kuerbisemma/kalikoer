@@ -4,3 +4,24 @@
     <h1>Impressum.</h1>
   </div>
 </div>
+
+<style>
+  .page-hero {
+    background: var(--white);
+    padding: 72px 40px 60px;
+    border-bottom: 1px solid #e8e4df;
+  }
+
+  .page-hero-inner { max-width: 800px; margin: 0 auto; }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    color: var(--teal);
+    line-height: 1.1;
+  }
+
+  @media (max-width: 900px) {
+    .page-hero { padding-left: 24px; padding-right: 24px; }
+  }
+</style>

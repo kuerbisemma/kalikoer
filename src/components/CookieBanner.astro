@@ -11,3 +11,58 @@
     </div>
   </div>
 </div>
+
+<style>
+  .cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9000;
+    background: #1a2630;
+    color: rgba(255,255,255,.85);
+    padding: 20px 32px;
+    box-shadow: 0 -4px 32px rgba(0,0,0,.25);
+    border-top: 3px solid #275D6F;
+    animation: slideUp .35s ease;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+
+  .cookie-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .cookie-text { flex: 1; min-width: 240px; font-size: 14px; line-height: 1.6; }
+  .cookie-text strong { color: #fff; }
+  .cookie-text a { color: #6fa8be; text-decoration: underline; }
+  .cookie-text a:hover { color: #fff; }
+  .cookie-btns { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
+
+  .cookie-btn {
+    padding: 10px 24px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    cursor: pointer;
+    border: none;
+    transition: background .2s, transform .15s;
+    white-space: nowrap;
+  }
+
+  .cookie-btn:hover { transform: translateY(-1px); }
+  .cookie-btn-accept { background: #275D6F; color: #fff; }
+  .cookie-btn-accept:hover { background: #1a3d4d; }
+  .cookie-btn-decline { background: transparent; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.25); }
+  .cookie-btn-decline:hover { background: rgba(255,255,255,.08); color: #fff; }
+</style>
