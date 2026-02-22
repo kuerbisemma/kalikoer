@@ -1062,21 +1062,19 @@ h1, h2, h3, h4, h5, h6,
   body.page-index .hero-img,
   body.page-index .conductor-img,
   body.page-index .community-img,
-  body.page-index .probe-photo,
   body.page-index .poster-wrap,
   body.page-archiv .card-img {
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    width: calc(100% + 48px);
+    max-width: none;
+    margin-left: -24px;
+    margin-right: -24px;
   }
 
   body.page-index .hero-img,
   body.page-index .conductor-img,
   body.page-index .community-img,
   body.page-archiv .card-img,
-  body.page-index .poster-wrap img,
-  body.page-index .probe-photo {
+  body.page-index .poster-wrap img {
     border-radius: 0;
   }
 
