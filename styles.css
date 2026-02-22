@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800&family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 /* Combined stylesheet for all pages */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -466,6 +468,8 @@
       section { padding: 64px 24px; }
       nav { padding: 0 24px; }
       .top-bar { padding: 8px 24px; }
+      #kontakt { padding-left: 12px; padding-right: 12px; }
+      #kontakt .contact-form { padding: 28px 18px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
 
@@ -1035,5 +1039,49 @@ body.page-archiv .page-hero h1 { margin-bottom: 16px; }
 
   .top-bar a[href^="tel:"] {
     flex: 1 1 100%;
+  }
+}
+
+/* ===== Typography sync with kalikoer.com ===== */
+body.page-index,
+body.page-archiv,
+body.page-impressum {
+  font-family: 'Rosario', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.section-heading,
+.page-hero h1,
+.event-title,
+.card-title {
+  font-family: 'Roboto Slab', serif;
+}
+
+/* ===== Full-width images on mobile ===== */
+@media (max-width: 900px) {
+  body.page-index .hero-img,
+  body.page-index .conductor-img,
+  body.page-index .community-img,
+  body.page-index .probe-photo,
+  body.page-index .poster-wrap,
+  body.page-archiv .card-img {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
+  body.page-index .hero-img,
+  body.page-index .conductor-img,
+  body.page-index .community-img,
+  body.page-archiv .card-img,
+  body.page-index .poster-wrap img,
+  body.page-index .probe-photo {
+    border-radius: 0;
+  }
+
+  body.page-index .poster-wrap img {
+    width: 100%;
+    max-width: 100%;
   }
 }
