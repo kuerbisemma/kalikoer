@@ -1029,6 +1029,15 @@ body.page-archiv .page-hero-inner { max-width: 1100px; }
 body.page-impressum .page-hero-inner { max-width: 800px; }
 body.page-archiv .page-hero h1 { margin-bottom: 16px; }
 
+html {
+  scrollbar-gutter: stable;
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 @media (max-width: 700px) {
   .top-bar {
     justify-content: flex-start;
@@ -1039,6 +1048,11 @@ body.page-archiv .page-hero h1 { margin-bottom: 16px; }
 
   .top-bar a[href^="tel:"] {
     flex: 1 1 100%;
+  }
+
+  .top-bar a {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -1062,6 +1076,7 @@ h1, h2, h3, h4, h5, h6,
   body.page-index .hero-img,
   body.page-index .conductor-img,
   body.page-index .community-img,
+  body.page-index .probe-photo,
   body.page-index .poster-wrap,
   body.page-archiv .card-img {
     width: calc(100% + 48px);
@@ -1073,6 +1088,7 @@ h1, h2, h3, h4, h5, h6,
   body.page-index .hero-img,
   body.page-index .conductor-img,
   body.page-index .community-img,
+  body.page-index .probe-photo,
   body.page-archiv .card-img,
   body.page-index .poster-wrap img {
     border-radius: 0;
@@ -1081,5 +1097,18 @@ h1, h2, h3, h4, h5, h6,
   body.page-index .poster-wrap img {
     width: 100%;
     max-width: 100%;
+  }
+
+  body.page-index #termine .events-stack {
+    width: calc(100% + 48px);
+    max-width: none;
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+
+  body.page-index #termine .event-card {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 }
