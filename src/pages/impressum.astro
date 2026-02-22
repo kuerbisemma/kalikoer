@@ -4,7 +4,15 @@ import HeroSection from '../features/impressum/HeroSection.astro';
 import ContentSection from '../features/impressum/ContentSection.astro';
 ---
 
-<BaseLayout title="Impressum – kalikoer" bodyClass="page-impressum" activePage="impressum" contactHref="index.html#kontakt">
+<BaseLayout
+  title="Impressum – kalikoer"
+  description="Impressum von kalikoer, Chor in Immenstadt im Allgäu."
+  canonicalPath="/impressum"
+  noindex={true}
+  bodyClass="page-impressum"
+  activePage="impressum"
+  contactHref="index.html#kontakt"
+>
   <HeroSection />
   <ContentSection />
 </BaseLayout>

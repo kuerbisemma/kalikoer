@@ -9,9 +9,49 @@ interface Props {
   bodyClass: 'page-index' | 'page-archiv' | 'page-impressum';
   activePage?: 'home' | 'archiv' | 'impressum';
   contactHref?: string;
+  description?: string;
+  canonicalPath?: string;
+  noindex?: boolean;
+  ogImage?: string;
 }
 
-const { title, bodyClass, activePage = 'home', contactHref = 'index.html#kontakt' } = Astro.props;
+const {
+  title,
+  bodyClass,
+  activePage = 'home',
+  contactHref = 'index.html#kontakt',
+  description = 'kalikoer ist ein Chor in Immenstadt im Allgäu. Wir proben dienstags um 19:10 Uhr und freuen uns auf neue Sängerinnen und Sänger.',
+  canonicalPath = '/',
+  noindex = false,
+  ogImage = '/images/konzert2025.jpg'
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://kalikoer.com');
+const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
+const ogImageUrl = new URL(ogImage, siteUrl).toString();
+const robots = noindex ? 'noindex, nofollow' : 'index, follow';
+const seoKeywords = 'Chor, Chor im Allgäu, Chor in Immenstadt, kalikoer, Singen im Allgäu';
+const shouldRenderMusicGroupSchema = bodyClass === 'page-index' && !noindex;
+
+const musicGroupSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MusicGroup',
+  name: 'kalikoer',
+  url: canonicalUrl,
+  genre: 'Chormusik',
+  description,
+  image: ogImageUrl,
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'Immenstadt'
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Allgäu'
+    }
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -20,6 +60,27 @@ const { title, bodyClass, activePage = 'home', contactHref = 'index.html#kontakt
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={seoKeywords} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="kalikoer" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    {shouldRenderMusicGroupSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(musicGroupSchema)}></script>
+    )}
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class={bodyClass}>

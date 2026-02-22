@@ -188,11 +188,66 @@
       background: var(--teal);
       color: var(--white);
       border-radius: 12px;
-      padding: 48px 40px;
+      padding: 36px 32px;
+      display: grid;
+      gap: 12px;
     }
-    .probe-card h3 { font-size: 1.3rem; margin-bottom: 12px; font-weight: 800; }
+    .probe-card-kicker {
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 700;
+      opacity: .8;
+    }
+    .probe-card h3 { font-size: 1.5rem; margin-bottom: 0; font-weight: 800; line-height: 1.2; }
     .probe-card p { opacity: .9; }
-    .probe-card .time { font-size: 2rem; font-weight: 800; margin: 20px 0; }
+    .probe-card .time {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      margin: 4px 0 6px;
+      line-height: 1.1;
+    }
+    .probe-card-points {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin: 2px 0 12px;
+      padding: 0;
+      font-size: 0.98rem;
+      line-height: 1.45;
+    }
+    .probe-card-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      opacity: .95;
+    }
+    .probe-card-points li::before {
+      content: '✓';
+      font-weight: 800;
+      line-height: 1;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+    .probe-card-link {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--white);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      transition: transform .2s, opacity .2s;
+    }
+    .probe-card-link:hover {
+      transform: translateY(-2px);
+      opacity: .9;
+    }
 
     /* ── COMMUNITY ───────────────────────────────────────────── */
     #gemeinsam { background: var(--white); }
