@@ -1,13 +1,25 @@
+---
+import { getTranslations, type Language } from '../i18n';
+
+interface Props {
+  language?: Language;
+}
+
+const { language = 'de' } = Astro.props;
+const t = getTranslations(language);
+const dataProtectionHref = language === 'allg' ? '/allg/Datenschutz.html' : '/Datenschutz.html';
+---
+
 <div id="cookieBanner" class="cookie-banner">
   <div class="cookie-inner">
     <div class="cookie-text">
-      <strong>Wir verwenden Cookies.</strong>
-      Diese Website verwendet technisch notwendige Cookies, um grundlegende Funktionen zu gewährleisten.
-      Weitere Informationen findest du in unserer <a href="Datenschutz.html">Datenschutzerklärung</a>.
+      <strong>{t.cookieBanner.title}</strong>
+      {t.cookieBanner.text}
+      <a href={dataProtectionHref}>{t.cookieBanner.dataProtection}</a>.
     </div>
     <div class="cookie-btns">
-      <button class="cookie-btn cookie-btn-accept" onclick="setCookie('accepted')">Akzeptieren</button>
-      <button class="cookie-btn cookie-btn-decline" onclick="setCookie('declined')">Nur notwendige</button>
+      <button class="cookie-btn cookie-btn-accept" onclick="setCookie('accepted')">{t.cookieBanner.accept}</button>
+      <button class="cookie-btn cookie-btn-decline" onclick="setCookie('declined')">{t.cookieBanner.necessary}</button>
     </div>
   </div>
 </div>

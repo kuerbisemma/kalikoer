@@ -1,30 +1,43 @@
+---
+import { getTranslations, type Language } from '../../i18n';
+
+interface Props {
+  language?: Language;
+}
+
+const { language = 'de' } = Astro.props;
+const t = getTranslations(language);
+const firstEvent = t.index.events.cards[0];
+const secondEvent = t.index.events.cards[1];
+---
+
 <section id="termine">
   <div class="termine-stage">
     <div class="poster-wrap">
-      <img src="/images/kalikoer-Juli 2026.jpg" alt="Konzertplakat – Are you still listening?" />
+      <img src="/images/kalikoer-Juli 2026.jpg" alt={t.index.events.posterAlt} />
     </div>
 
     <div class="events-stack">
       <div class="events-header">
-        <div class="section-tag">Live dabei</div>
-        <h2 class="section-heading">Termine &amp; Auftritte.</h2>
+        <div class="section-tag">{t.index.events.tag}</div>
+        <h2 class="section-heading">{t.index.events.title}</h2>
       </div>
 
       <div class="event-card">
         <div class="event-card-header">
-          <div class="event-date">17. Juli 2026</div>
-          <div class="event-title">Are you still listening? – Folge 1</div>
+          <div class="event-date">{firstEvent.date}</div>
+          <div class="event-title">{firstEvent.title}</div>
         </div>
         <div class="event-body">
-          <p>Wer kennt es nicht: „Nur noch eine Folge..nur noch kurz weiterschauen.."?! Amazon, Netflix und Co. braucht ihr an diesem Abend nicht. Wir bringen die größten Songs aus Serien, Streaming-Highlights und Blockbuster live auf die Bühne. Ein Konzert wie ein perfekter Serienabend: mal laut, mal leise, mal episch. Popcorn gibt's kein, aber dafür Gänsehaut, ganz viel Freude und Melodien, die noch lange nachklingen. Ein Live-Stream für eure Ohren!</p>
+          <p>{firstEvent.text}</p>
           <div class="event-meta">
             <span>
               <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Sonthofener Str. 41, 87544 Blaichach
+              {firstEvent.meta[0]}
             </span>
             <span>
               <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
-              Parkplatz am Bahnhof (Immenstädter Str. 6) oder Weidachstraße
+              {firstEvent.meta[1]}
             </span>
           </div>
         </div>
@@ -32,15 +45,15 @@
 
       <div class="event-card">
         <div class="event-card-header">
-          <div class="event-date">19. Juli 2026</div>
-          <div class="event-title">Are you still listening? – Folge 2</div>
+          <div class="event-date">{secondEvent.date}</div>
+          <div class="event-title">{secondEvent.title}</div>
         </div>
         <div class="event-body">
-          <p>Ihr dachtet, eine Folge reicht? Pustekuchen! Auch heute Abend braucht ihr kein TV und der Tatort darf heute auch ausfallen. Wir liefern erneut die größten Songs aus Serien, Streaming-Highlights und Blockbustern. Für alle, die uns am Freitag nicht hören, gibt's heute Folge 2 unseres Konzerts.</p>
+          <p>{secondEvent.text}</p>
           <div class="event-meta">
             <span>
               <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Erlöserkirche Immenstadt
+              {secondEvent.meta[0]}
             </span>
           </div>
         </div>

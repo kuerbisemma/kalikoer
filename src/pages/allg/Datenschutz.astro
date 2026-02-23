@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../features/datenschutz/HeroSection.astro';
+import ContentSection from '../../features/datenschutz/ContentSection.astro';
+import { getTranslations } from '../../i18n';
+
+const language = 'allg' as const;
+const t = getTranslations(language);
+---
+
+<BaseLayout
+  title={t.pageMeta.datenschutz.title}
+  description={t.pageMeta.datenschutz.description}
+  canonicalPath="/allg/Datenschutz"
+  languageBasePath="/Datenschutz"
+  language={language}
+  bodyClass="page-datenschutz"
+  activePage="datenschutz"
+  contactHref="/allg.html#kontakt"
+>
+  <HeroSection language={language} />
+  <ContentSection language={language} />
+</BaseLayout>

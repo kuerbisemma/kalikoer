@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../features/impressum/HeroSection.astro';
+import ContentSection from '../../features/impressum/ContentSection.astro';
+import { getTranslations } from '../../i18n';
+
+const language = 'allg' as const;
+const t = getTranslations(language);
+---
+
+<BaseLayout
+  title={t.pageMeta.impressum.title}
+  description={t.pageMeta.impressum.description}
+  canonicalPath="/allg/impressum"
+  languageBasePath="/impressum"
+  language={language}
+  noindex={true}
+  bodyClass="page-impressum"
+  activePage="impressum"
+  contactHref="/allg.html#kontakt"
+>
+  <HeroSection language={language} />
+  <ContentSection language={language} />
+</BaseLayout>

@@ -3,11 +3,14 @@ import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import { getTranslations, type Language } from '../i18n';
 
 interface Props {
   title: string;
   bodyClass: 'page-index' | 'page-archiv' | 'page-impressum' | 'page-datenschutz';
   activePage?: 'home' | 'archiv' | 'impressum' | 'datenschutz';
+  language?: Language;
+  languageBasePath?: '/' | '/archiv' | '/impressum' | '/Datenschutz';
   contactHref?: string;
   description?: string;
   canonicalPath?: string;
@@ -19,12 +22,16 @@ const {
   title,
   bodyClass,
   activePage = 'home',
+  language = 'de',
+  languageBasePath = '/',
   contactHref = 'index.html#kontakt',
   description = 'kalikoer ist ein Chor in Immenstadt im Allgäu. Wir proben dienstags um 19:10 Uhr und freuen uns auf neue Sängerinnen und Sänger.',
   canonicalPath = '/',
   noindex = false,
   ogImage = '/images/konzert2025.jpg'
 } = Astro.props;
+
+const t = getTranslations(language);
 
 const siteUrl = Astro.site ?? new URL('https://kalikoer.com');
 const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
@@ -52,10 +59,13 @@ const musicGroupSchema = {
     }
   ]
 };
+
+const dePath = languageBasePath === '/' ? '/index.html' : `${languageBasePath}.html`;
+const allgPath = languageBasePath === '/' ? '/allg.html' : `/allg${languageBasePath}.html`;
 ---
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang={language === 'allg' ? 'de-CH' : 'de'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,11 +94,18 @@ const musicGroupSchema = {
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class={bodyClass}>
-    <TopBar contactHref={contactHref} />
-    <Header activePage={activePage} />
+    <div class="language-chooser-wrap">
+      <div class="language-chooser" aria-label={t.languageChooser.label}>
+        <span>{t.languageChooser.label}</span>
+        <a href={dePath} class={language === 'de' ? 'active' : undefined}>{t.languageChooser.de}</a>
+        <a href={allgPath} class={language === 'allg' ? 'active' : undefined}>{t.languageChooser.allg}</a>
+      </div>
+    </div>
+    <TopBar contactHref={contactHref} language={language} />
+    <Header activePage={activePage} language={language} />
     <slot />
-    <Footer />
-    <CookieBanner />
+    <Footer language={language} />
+    <CookieBanner language={language} />
 
     <script is:inline>
       function toggleMenu() {
@@ -123,5 +140,43 @@ const musicGroupSchema = {
         }
       }
     </script>
+
+    <style is:inline>
+      .language-chooser-wrap {
+        background: var(--dark);
+        display: flex;
+        justify-content: flex-end;
+        padding: 8px 40px;
+      }
+
+      .language-chooser {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        color: rgba(255,255,255,.9);
+        font-size: 12px;
+        letter-spacing: .5px;
+      }
+
+      .language-chooser a {
+        color: rgba(255,255,255,.75);
+        text-decoration: none;
+        border: 1px solid rgba(255,255,255,.25);
+        border-radius: 999px;
+        padding: 4px 10px;
+      }
+
+      .language-chooser a.active {
+        color: var(--white);
+        border-color: #6fa8be;
+      }
+
+      @media (max-width: 900px) {
+        .language-chooser-wrap {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+    </style>
   </body>
 </html>

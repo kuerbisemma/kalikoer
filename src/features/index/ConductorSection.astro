@@ -1,14 +1,25 @@
+---
+import { getTranslations, type Language } from '../../i18n';
+
+interface Props {
+  language?: Language;
+}
+
+const { language = 'de' } = Astro.props;
+const t = getTranslations(language);
+---
+
 <section id="das-sind-wir">
   <div class="container">
     <div class="conductor-grid">
       <div class="conductor-img">
-        <img src="/images/johannes.jpg" alt="Johannes Golda – Chorleiter" />
+        <img src="/images/johannes.jpg" alt={t.index.conductor.imageAlt} />
       </div>
       <div class="conductor-text">
-        <div class="section-tag">Das sind wir</div>
-        <h2 class="section-heading">Hallo!</h2>
-        <p>Ich bin Johannes, der Chorleiter von kalikoer. Musik begleitet mich schon seit vielen Jahren. Ich spiele verschiedene Instrumente, aktiv vor allem Klavier und Orgel, und singe selbst in verschiedenen Chören und Ensembles. Ich bin kein Profi, habe aber durch die langjährige Praxis viel Erfahrung gesammelt 😊</p>
-        <p>Bei kalikoer steht für mich vor allem die Freude am gemeinsamen Singen im Mittelpunkt. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die meine Leidenschaft zur Musik teilen.</p>
+        <div class="section-tag">{t.index.conductor.tag}</div>
+        <h2 class="section-heading">{t.index.conductor.title}</h2>
+        <p>{t.index.conductor.p1}</p>
+        <p>{t.index.conductor.p2}</p>
       </div>
     </div>
   </div>

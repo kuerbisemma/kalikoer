@@ -1,8 +1,19 @@
+---
+import { getTranslations, type Language } from '../../i18n';
+
+interface Props {
+  language?: Language;
+}
+
+const { language = 'de' } = Astro.props;
+const t = getTranslations(language);
+---
+
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="section-tag">Rückblick</div>
-    <h1>Archiv.</h1>
-    <p>Alle vergangenen und kommenden Auftritte, Konzerte und Aktionen von kalikoer im Überblick.</p>
+    <div class="section-tag">{t.archiv.hero.tag}</div>
+    <h1>{t.archiv.hero.title}</h1>
+    <p>{t.archiv.hero.text}</p>
   </div>
 </div>
 

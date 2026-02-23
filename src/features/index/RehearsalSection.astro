@@ -1,24 +1,33 @@
+---
+import { getTranslations, type Language } from '../../i18n';
+
+interface Props {
+  language?: Language;
+}
+
+const { language = 'de' } = Astro.props;
+const t = getTranslations(language);
+---
+
 <section id="probe">
   <div class="container">
     <div class="probe-grid">
       <div class="conductor-text">
-        <div class="section-tag">Mitsingen</div>
-        <h2 class="section-heading">Probe.</h2>
-        <p class="probe-intro">Geprägt von positiver Energie, Freude und Gemeinschaft:</p>
-        <p class="probe-intro">Unsere Proben finden immer <strong>dienstags um 19:10 Uhr</strong> statt.</p>
-        <p class="probe-intro-last">Wir arbeiten an diversen Stücken und bereiten uns so auf zwei bis drei Konzerte im Jahr vor.</p>
+        <div class="section-tag">{t.index.rehearsal.tag}</div>
+        <h2 class="section-heading">{t.index.rehearsal.title}</h2>
+        <p class="probe-intro">{t.index.rehearsal.intro1}</p>
+        <p class="probe-intro"><strong>{t.index.rehearsal.intro2}</strong></p>
+        <p class="probe-intro-last">{t.index.rehearsal.intro3}</p>
       </div>
       <div>
-        <img src="/images/konzert2025.jpg" alt="Kalikoer Konzert 2025" class="probe-photo" />
+        <img src="/images/konzert2025.jpg" alt={t.index.rehearsal.imageAlt} class="probe-photo" />
         <div class="probe-card">
-          <h3>Unsere Chorprobe</h3>
-          <div class="time">Dienstags · 19:10 Uhr</div>
+          <h3>{t.index.rehearsal.cardTitle}</h3>
+          <div class="time">{t.index.rehearsal.cardTime}</div>
           <ul class="probe-card-points">
-            <li>Kalvarienbergstraße 27, 87509 Immenstadt</li>
-            <li>Stimmbildung</li>
-            <li>Kostenlose Übe-Tracks zur Vor- und Nachbereitung</li>
+            {t.index.rehearsal.points.map((point) => <li>{point}</li>)}
           </ul>
-          <a href="#kontakt" class="probe-card-link">Jetzt reinschnuppern</a>
+          <a href="#kontakt" class="probe-card-link">{t.index.rehearsal.cta}</a>
         </div>
       </div>
     </div>

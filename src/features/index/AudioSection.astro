@@ -1,4 +1,13 @@
 ---
+import { getTranslations, type Language } from '../../i18n';
+
+interface Props {
+  language?: Language;
+}
+
+const { language = 'de' } = Astro.props;
+const t = getTranslations(language);
+
 const tracks = [
   { title: '900 Miles', artist: 'John Radford', src: '/audio/900 Miles, John Radford.mp3' },
   { title: 'Winter Lullaby', artist: 'Pinkzebra', src: '/audio/Winter Lullaby, Pinkzebra.mp3' }
@@ -8,9 +17,9 @@ const tracks = [
 <section id="audio-beispiele">
   <div class="audio-stage">
     <div class="audio-header">
-      <div class="section-tag">Klangbeispiele</div>
-      <h2 class="section-heading">Hörproben.</h2>
-      <p>Hier findest du Beispiele zum Reinhören.</p>
+      <div class="section-tag">{t.index.audio.tag}</div>
+      <h2 class="section-heading">{t.index.audio.title}</h2>
+      <p>{t.index.audio.text}</p>
     </div>
 
     <div class="audio-list">
@@ -19,7 +28,7 @@ const tracks = [
           <div class="audio-title">{track.title}</div>
           <div class="audio-artist">{track.artist}</div>
           <audio controls preload="none" src={track.src}>
-            Dein Browser unterstützt das Audio-Element nicht.
+            {t.index.audio.unsupported}
           </audio>
         </article>
       ))}

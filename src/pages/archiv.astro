@@ -2,16 +2,22 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../features/archiv/HeroSection.astro';
 import ArchiveSection from '../features/archiv/ArchiveSection.astro';
+import { getTranslations } from '../i18n';
+
+const language = 'de' as const;
+const t = getTranslations(language);
 ---
 
 <BaseLayout
-  title="Archiv – kalikoer Chor in Immenstadt"
-  description="Archiv von kalikoer, dem Chor in Immenstadt im Allgäu: Eindrücke, Konzerte und musikalische Rückblicke."
+  title={t.pageMeta.archiv.title}
+  description={t.pageMeta.archiv.description}
   canonicalPath="/archiv"
+  languageBasePath="/archiv"
+  language={language}
   bodyClass="page-archiv"
   activePage="archiv"
   contactHref="index.html#kontakt"
 >
-  <HeroSection />
-  <ArchiveSection />
+  <HeroSection language={language} />
+  <ArchiveSection language={language} />
 </BaseLayout>

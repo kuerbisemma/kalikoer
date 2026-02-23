@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../features/index/HeroSection.astro';
+import ConductorSection from '../../features/index/ConductorSection.astro';
+import RehearsalSection from '../../features/index/RehearsalSection.astro';
+import CommunitySection from '../../features/index/CommunitySection.astro';
+import AudioSection from '../../features/index/AudioSection.astro';
+import EventsSection from '../../features/index/EventsSection.astro';
+import InstagramSection from '../../features/index/InstagramSection.astro';
+import ContactSection from '../../features/index/ContactSection.astro';
+import { getTranslations } from '../../i18n';
+
+const language = 'allg' as const;
+const t = getTranslations(language);
+---
+
+<BaseLayout
+  title={t.pageMeta.index.title}
+  description={t.pageMeta.index.description}
+  canonicalPath="/allg"
+  languageBasePath="/"
+  language={language}
+  bodyClass="page-index"
+  activePage="home"
+  contactHref="#kontakt"
+>
+  <HeroSection language={language} />
+  <ConductorSection language={language} />
+  <RehearsalSection language={language} />
+  <CommunitySection language={language} />
+  <AudioSection language={language} />
+  <EventsSection language={language} />
+  <InstagramSection language={language} />
+  <ContactSection language={language} />
+</BaseLayout>

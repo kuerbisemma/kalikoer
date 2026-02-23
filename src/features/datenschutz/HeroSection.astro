@@ -1,7 +1,18 @@
+---
+import { getTranslations, type Language } from '../../i18n';
+
+interface Props {
+  language?: Language;
+}
+
+const { language = 'de' } = Astro.props;
+const t = getTranslations(language);
+---
+
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="section-tag">Rechtliches</div>
-    <h1>Datenschutz.</h1>
+    <div class="section-tag">{t.datenschutz.hero.tag}</div>
+    <h1>{t.datenschutz.hero.title}</h1>
   </div>
 </div>
 

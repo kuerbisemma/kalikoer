@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../features/archiv/HeroSection.astro';
+import ArchiveSection from '../../features/archiv/ArchiveSection.astro';
+import { getTranslations } from '../../i18n';
+
+const language = 'allg' as const;
+const t = getTranslations(language);
+---
+
+<BaseLayout
+  title={t.pageMeta.archiv.title}
+  description={t.pageMeta.archiv.description}
+  canonicalPath="/allg/archiv"
+  languageBasePath="/archiv"
+  language={language}
+  bodyClass="page-archiv"
+  activePage="archiv"
+  contactHref="/allg.html#kontakt"
+>
+  <HeroSection language={language} />
+  <ArchiveSection language={language} />
+</BaseLayout>

@@ -1,27 +1,38 @@
+---
+import { getTranslations, type Language } from '../../i18n';
+
+interface Props {
+  language?: Language;
+}
+
+const { language = 'de' } = Astro.props;
+const t = getTranslations(language);
+---
+
 <section id="kontakt">
   <div class="container">
     <div class="contact-grid">
       <div class="contact-intro">
-        <div class="section-tag">Kontakt</div>
-        <h2 class="section-heading">Anfragen? Anregungen? Lust, mitzumachen?</h2>
-        <p class="contact-highlight">Meld' dich bei uns.</p>
-        <p>Du suchst einen Chor für deinen Geburtstag, deine Hochzeit oder deine Scheidung? Oder hast du Lust, mitzusingen? Dann melde dich gerne. Zurzeit suchen wir vor allem Männerstimmen. Wenn du Freude am Singen hast und Gesangserfahrung hast, beispielsweise im Schulchor, anderen Ensembles o.ä., dann bist du bei uns genau richtig!</p>
+        <div class="section-tag">{t.index.contact.tag}</div>
+        <h2 class="section-heading">{t.index.contact.title}</h2>
+        <p class="contact-highlight">{t.index.contact.highlight}</p>
+        <p>{t.index.contact.text}</p>
       </div>
       <div class="contact-form">
         <form action="https://formspree.io/f/xlgwpdqg" method="POST">
           <div class="form-group">
-            <label for="name">Name *</label>
-            <input type="text" id="name" name="name" placeholder="Dein Name" required />
+            <label for="name">{t.index.contact.form.name}</label>
+            <input type="text" id="name" name="name" placeholder={t.index.contact.form.namePlaceholder} required />
           </div>
           <div class="form-group">
-            <label for="email">E-Mail *</label>
-            <input type="email" id="email" name="email" placeholder="deine@email.de" required />
+            <label for="email">{t.index.contact.form.email}</label>
+            <input type="email" id="email" name="email" placeholder={t.index.contact.form.emailPlaceholder} required />
           </div>
           <div class="form-group">
-            <label for="stimme">Ich singe</label>
+            <label for="stimme">{t.index.contact.form.voice}</label>
             <div class="select-wrapper">
               <select id="stimme" name="stimme">
-                <option value="">Bitte wählen</option>
+                <option value="">{t.index.contact.form.voicePlaceholder}</option>
                 <option value="sopran">Sopran</option>
                 <option value="alt">Alt</option>
                 <option value="tenor">Tenor</option>
@@ -30,16 +41,16 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="nachricht">Nachricht</label>
-            <textarea id="nachricht" name="message" placeholder="Deine Nachricht..."></textarea>
+            <label for="nachricht">{t.index.contact.form.message}</label>
+            <textarea id="nachricht" name="message" placeholder={t.index.contact.form.messagePlaceholder}></textarea>
           </div>
           <div class="form-group">
             <div class="checkbox-group">
               <input type="checkbox" id="datenschutz" name="datenschutz" value="akzeptiert" required />
-              <label for="datenschutz">Die Hinweise zum Datenschutz habe ich gelesen. Ich bin damit einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verarbeitet werden. *</label>
+              <label for="datenschutz">{t.index.contact.form.privacy}</label>
             </div>
           </div>
-          <button type="submit" class="btn-submit">Senden</button>
+          <button type="submit" class="btn-submit">{t.index.contact.form.submit}</button>
         </form>
       </div>
     </div>

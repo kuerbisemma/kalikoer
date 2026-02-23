@@ -1,35 +1,41 @@
 ---
+import { getTranslations, type Language } from '../i18n';
+
 interface Props {
   activePage?: 'home' | 'archiv' | 'impressum' | 'datenschutz';
+  language?: Language;
 }
 
-const { activePage = 'home' } = Astro.props;
+const { activePage = 'home', language = 'de' } = Astro.props;
+const t = getTranslations(language);
+const homeHref = language === 'allg' ? '/allg.html' : '/index.html';
+const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
 ---
 
 <header>
   <nav>
-    <a href="index.html" class="logo">
+    <a href={homeHref} class="logo">
       <img src="/images/logo.png" alt="kalikoer" class="logo-img" />
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#das-sind-wir">Das sind wir</a></li>
-      <li><a href="index.html#probe">Probe</a></li>
-      <li><a href="index.html#audio-beispiele">Hörproben</a></li>
-      <li><a href="index.html#termine">Termine</a></li>
-      <li><a href="archiv.html" class={activePage === 'archiv' ? 'active' : undefined}>Archiv</a></li>
-      <li><a href="index.html#kontakt">Kontakt</a></li>
+      <li><a href={`${homeHref}#das-sind-wir`}>{t.header.about}</a></li>
+      <li><a href={`${homeHref}#probe`}>{t.header.rehearsal}</a></li>
+      <li><a href={`${homeHref}#audio-beispiele`}>{t.header.audio}</a></li>
+      <li><a href={`${homeHref}#termine`}>{t.header.events}</a></li>
+      <li><a href={archiveHref} class={activePage === 'archiv' ? 'active' : undefined}>{t.header.archive}</a></li>
+      <li><a href={`${homeHref}#kontakt`}>{t.header.contact}</a></li>
     </ul>
     <div class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#das-sind-wir" onclick="toggleMenu()">Das sind wir</a>
-    <a href="index.html#probe" onclick="toggleMenu()">Probe</a>
-    <a href="index.html#audio-beispiele" onclick="toggleMenu()">Hörproben</a>
-    <a href="index.html#termine" onclick="toggleMenu()">Termine</a>
-    <a href="archiv.html" onclick="toggleMenu()">Archiv</a>
-    <a href="index.html#kontakt" onclick="toggleMenu()">Kontakt</a>
+    <a href={`${homeHref}#das-sind-wir`} onclick="toggleMenu()">{t.header.about}</a>
+    <a href={`${homeHref}#probe`} onclick="toggleMenu()">{t.header.rehearsal}</a>
+    <a href={`${homeHref}#audio-beispiele`} onclick="toggleMenu()">{t.header.audio}</a>
+    <a href={`${homeHref}#termine`} onclick="toggleMenu()">{t.header.events}</a>
+    <a href={archiveHref} onclick="toggleMenu()">{t.header.archive}</a>
+    <a href={`${homeHref}#kontakt`} onclick="toggleMenu()">{t.header.contact}</a>
   </div>
 </header>
 

@@ -8,22 +8,28 @@ import AudioSection from '../features/index/AudioSection.astro';
 import EventsSection from '../features/index/EventsSection.astro';
 import InstagramSection from '../features/index/InstagramSection.astro';
 import ContactSection from '../features/index/ContactSection.astro';
+import { getTranslations } from '../i18n';
+
+const language = 'de' as const;
+const t = getTranslations(language);
 ---
 
 <BaseLayout
-  title="kalikoer – Chor in Immenstadt im Allgäu"
-  description="kalikoer ist dein Chor in Immenstadt im Allgäu: moderne Chormusik, Gemeinschaft."
+  title={t.pageMeta.index.title}
+  description={t.pageMeta.index.description}
   canonicalPath="/"
+  languageBasePath="/"
+  language={language}
   bodyClass="page-index"
   activePage="home"
   contactHref="#kontakt"
 >
-  <HeroSection />
-  <ConductorSection />
-  <RehearsalSection />
-  <CommunitySection />
-  <AudioSection />
-  <EventsSection />
-  <InstagramSection />
-  <ContactSection />
+  <HeroSection language={language} />
+  <ConductorSection language={language} />
+  <RehearsalSection language={language} />
+  <CommunitySection language={language} />
+  <AudioSection language={language} />
+  <EventsSection language={language} />
+  <InstagramSection language={language} />
+  <ContactSection language={language} />
 </BaseLayout>
