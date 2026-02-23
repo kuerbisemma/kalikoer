@@ -17,7 +17,7 @@ const de = {
     contact: 'Kontakt'
   },
   footer: {
-    brandText: 'kalikoer ist ein junger Chor im Allgäu (Raum Kempten, Immenstadt, Sonthofen). Geprobt wird dienstags in Immenstadt.',
+    brandText: 'kalikoer ist ein junger Chor im Allgäu (Raum Kempten, Immenstadt und Sonthofen). Geprobt wird dienstags in Immenstadt.',
     navigation: 'Navigation',
     contact: 'Kontakt',
     home: 'Home',
@@ -39,7 +39,7 @@ const de = {
   pageMeta: {
     index: {
       title: 'kalikoer – Chor in Immenstadt im Allgäu',
-      description: 'kalikoer ist dein Chor in Immenstadt im Allgäu: moderne Chormusik, Gemeinschaft.'
+      description: 'kalikoer ist ein junger Chor in Immenstadt im Allgäu.'
     },
     archiv: {
       title: 'Archiv – kalikoer Chor in Immenstadt',
@@ -57,19 +57,19 @@ const de = {
   index: {
     hero: {
       tag: 'Chor im Allgäu',
-      title: 'Chor in Immenstadt im Allgäu',
-      p1: 'Mit Leidenschaft und Freude am gemeinsamen Singen vereint kalikoer junge Stimmen aus dem Allgäu zu einem einzigartigen Klangerlebnis. Unser Chor, bestehend aus engagierten Sängerinnen und Sängern mit einem Altersdurchschnitt von etwa 35 Jahren, verbindet moderne Chormusik mit geselligem Miteinander.',
-      p2: 'Ob gefühlvolle Balladen, schwungvolle Pop-Hits oder traditionelle Stücke – bei uns trifft musikalische Vielfalt auf pure Begeisterung.',
+      title: 'Kalikoer',
+      p1: 'Mit Leidenschaft und Freude am gemeinsamen Singen vereint kalikoer junge Stimmen aus dem Allgäu zu einem einzigartigen Klangerlebnis. Unser Chor, bestehend aus engagierten Sängerinnen und Sängern mit einem Altersdurchschnitt von etwa 35 Jahren verbindet moderne Chormusik mit geselligem Miteinander.',
+      p2: 'Gefühlvolle Balladen, schwungvolle Pop-Hits oder traditionelle Stücke – bei uns trifft musikalische Vielfalt auf pure Begeisterung.',
       ctaJoin: 'Interesse am Mitsingen? Melde dich bei uns!',
       ctaAudio: 'Hörproben anhören',
-      imageAlt: 'kalikoer – Chor in Immenstadt im Allgäu'
+      imageAlt: 'kalikoer, ein junger Chor aus Immenstadt im Allgäu beim Chorfest 2024 in Sonthofen.'
     },
     conductor: {
       tag: 'Das sind wir',
       title: 'Hallo!',
-      p1: 'Ich bin Johannes, der Chorleiter von kalikoer. Musik begleitet mich schon seit vielen Jahren. Ich spiele verschiedene Instrumente, aktiv vor allem Klavier und Orgel, und singe selbst in verschiedenen Chören und Ensembles. Ich bin kein Profi, habe aber durch die langjährige Praxis viel Erfahrung gesammelt 😊',
-      p2: 'Bei kalikoer steht für mich vor allem die Freude am gemeinsamen Singen im Mittelpunkt. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die meine Leidenschaft zur Musik teilen.',
-      imageAlt: 'Johannes Golda – Chorleiter'
+      p1: 'Ich bin Johannes, der Chorleiter von kalikoer. Musik begleitet mich schon seit vielen Jahren. Ich spiele mehrere Instrumente, aktiv vor allem Klavier und Orgel, und singe selbst in verschiedenen Chören und Ensembles. Ich bin kein Profi, aber durch die vielen Jahre Praxis bringe ich jede Menge Erfahrung und vor allem viel Herzblut mit 😊',
+      p2: 'Bei kalikoer steht für mich vor allem die Freude am gemeinsamen Singen im Mittelpunkt. Und genau die verbindet uns. Bei uns treffen Lehrer auf Architekten, Physiotherapeutinnen auf Software-Entwickler, Marketingprofis auf Hüttenwirte – ein herrlich bunter Mix an Menschen. Was uns zusammenschweißt? Die Begeisterung für Musik. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die meine Leidenschaft zur Musik teilen.',
+      imageAlt: 'Johannes Golda, Chorleiter von kalikoer, einem jungen Chor aus Immenstadt im Allgäu.'
     },
     rehearsal: {
       tag: 'Mitsingen',
@@ -77,41 +77,41 @@ const de = {
       intro1: 'Geprägt von positiver Energie, Freude und Gemeinschaft:',
       intro2: 'Unsere Proben finden immer dienstags um 19:10 Uhr statt.',
       intro3: 'Wir arbeiten an diversen Stücken und bereiten uns so auf zwei bis drei Konzerte im Jahr vor.',
-      imageAlt: 'Kalikoer Konzert 2025',
+      imageAlt: 'Kalikoer beim Konzert im September 2025 in der Erlöserkirche Immenstadt.',
       cardTitle: 'Unsere Chorprobe',
       cardTime: 'Dienstags · 19:10 Uhr',
-      points: ['Kalvarienbergstraße 27, 87509 Immenstadt', 'Stimmbildung', 'Kostenlose Übe-Tracks zur Vor- und Nachbereitung'],
+      points: ['Kalvarienbergstraße 27, 87509 Immenstadt', 'Stimmbildung', 'Kostenlose Übungstracks zur Vor- und Nachbereitung'],
       cta: 'Jetzt reinschnuppern'
     },
     community: {
       tag: 'Mehr als Musik',
       title: 'Gemeinsam.',
       p1: 'Nach dem gemeinsamen Singen lassen wir den Abend gerne entspannt ausklingen. Oft sitzen wir noch gemütlich zusammen, plaudern und genießen ein kühles Getränk.',
-      p2: 'Auch außerhalb der Proben unternehmen wir gerne etwas zusammen. Ob wir gemeinsam ein Konzert besuchen, uns eine Ausstellung anschauen oder einfach spontan etwas unternehmen – bei uns geht es unkompliziert und herzlich zu. Uns verbindet nicht nur die Musik, sondern auch die Freude an gemeinsamen Erlebnissen.',
+      p2: 'Auch außerhalb der Proben unternehmen wir gerne etwas zusammen. Wir besuchen gemeinsam Konzerte, schauen uns Ausstellungen an oder unternehmen einfach spontan was. Bei uns geht es unkompliziert und herzlich zu. Uns verbindet nicht nur die Musik, sondern auch die Freude an gemeinsamen Erlebnissen.',
       p3: 'Bei kalikoer fühlt sich jeder wohl und genau das macht unseren Chor so besonders.',
-      imageAlt: 'Gemeinsam bei kalikoer'
+      imageAlt: 'Kalikoer, ein junger Chor aus dem Allgäu, beim gemeinsamen Abendessen.'
     },
     audio: {
       tag: 'Klangbeispiele',
       title: 'Hörproben.',
-      text: 'Hier findest du Beispiele zum Reinhören.',
+      text: 'Hier findest du Beispiele von unseren Live-Auftritten zum Reinhören. Viel Spaß beim Anhören!',
       unsupported: 'Dein Browser unterstützt das Audio-Element nicht.'
     },
     events: {
       tag: 'Live dabei',
       title: 'Termine & Auftritte.',
-      posterAlt: 'Konzertplakat – Are you still listening?',
+      posterAlt: 'Konzertplakat Kalikoer – Are you still listening?',
       cards: [
         {
           date: '17. Juli 2026',
           title: 'Are you still listening? – Folge 1',
-          text: 'Wer kennt es nicht: „Nur noch eine Folge..nur noch kurz weiterschauen.."?! Amazon, Netflix und Co. braucht ihr an diesem Abend nicht. Wir bringen die größten Songs aus Serien, Streaming-Highlights und Blockbuster live auf die Bühne. Ein Konzert wie ein perfekter Serienabend: mal laut, mal leise, mal episch. Popcorn gibt\'s kein, aber dafür Gänsehaut, ganz viel Freude und Melodien, die noch lange nachklingen. Ein Live-Stream für eure Ohren!',
+          text: 'Wer kennt es nicht: „Nur noch eine Folge..nur noch kurz weiterschauen.."?! Amazon, Netflix und Co. braucht ihr an diesem Abend nicht. Wir bringen die größten Songs aus Serien, Streaming-Highlights und Blockbustern live auf die Bühne. Ein Konzert wie ein perfekter Serienabend: mal laut, mal leise, mal episch. Popcorn gibt\'s kein, aber dafür Gänsehaut, ganz viel Freude und Melodien, die noch lange nachklingen. Ein Live-Stream für eure Ohren!',
           meta: ['Sonthofener Str. 41, 87544 Blaichach', 'Parkplatz am Bahnhof (Immenstädter Str. 6) oder Weidachstraße']
         },
         {
           date: '19. Juli 2026',
           title: 'Are you still listening? – Folge 2',
-          text: 'Ihr dachtet, eine Folge reicht? Pustekuchen! Auch heute Abend braucht ihr kein TV und der Tatort darf heute auch ausfallen. Wir liefern erneut die größten Songs aus Serien, Streaming-Highlights und Blockbustern. Für alle, die uns am Freitag nicht hören, gibt\'s heute Folge 2 unseres Konzerts.',
+          text: 'Ihr dachtet, eine Folge reicht? Pustekuchen! Auch heute Abend braucht ihr kein TV und der Tatort darf heute auch ausfallen. Wir liefern erneut die größten Songs aus Serien, Streaming-Highlights und Blockbustern. Für alle, die uns am Freitag nicht hören konnten, gibt\'s heute Folge 2 unseres Konzerts.',
           meta: ['Erlöserkirche Immenstadt']
         }
       ]
@@ -145,7 +145,7 @@ const de = {
     hero: {
       tag: 'Rückblick',
       title: 'Archiv.',
-      text: 'Alle vergangenen und kommenden Auftritte, Konzerte und Aktionen von kalikoer im Überblick.'
+      text: 'Alle Auftritte, Konzerte und Aktionen von kalikoer im Überblick.'
     },
     years: [
       {
@@ -154,7 +154,7 @@ const de = {
           {
             date: '17. & 19. Juli 2026',
             title: 'Are you still listening?',
-            desc: 'Im Juli 2026 singt der junge Chor kalikoer aus Immenstadt bekannte Titel aus Streaming, Serien und Filmklassiker. Zwei Abende voller Gänsehaut und großer Melodien – Folge 1 in Blaichach, Folge 2 in der Erlöserkirche Immenstadt.',
+            desc: 'Im Juli 2026 singt kalikoer aus Immenstadt bekannte Titel aus Streaming, Serien und Filmklassiker. Zwei Abende voller Gänsehaut und großer Melodien – Folge 1 in Blaichach, Folge 2 in der Erlöserkirche Immenstadt.',
             tag: 'Konzert'
           }
         ]
@@ -164,20 +164,14 @@ const de = {
         items: [
           {
             date: '6. Dezember 2025',
-            title: 'Orgelmatinee – St. Nikolaus Immenstadt',
-            desc: 'Am 06.12.2025 sang Kalikör weihnachtliche Lieder zur Adventszeit im Rahmen der Orgelmatinee in der Kirche St. Nikolaus in Immenstadt.',
-            tag: 'Auftritt'
-          },
-          {
-            date: '6. Dezember 2025',
             title: 'Adventskonzert',
-            desc: 'Weihnachtliche Klänge in der Kirche – kalikoer gestaltete die Orgelmatinee in der Adventszeit musikalisch mit.',
+            desc: 'Weihnachtliche Klänge in der Kirche gab\'s zur Adventszeit im Rahmen der Orgelmatinee in der Kirche St. Michael in Immenstadt.',
             tag: 'Konzert'
           },
           {
             date: '13. Dezember 2025',
             title: 'Bühler Seeweihnacht',
-            desc: 'Am 13.12.2025 sang Kalikör weihnachtliche Lieder zur Adventszeit im Rahmen der Bühler Seeweihnacht in Immenstadt.',
+            desc: 'Eiskalt aber wunderschön war\'s auch bei der Bühler Seeweihnacht in Immenstadt.',
             tag: 'Auftritt'
           },
           {
@@ -189,7 +183,7 @@ const de = {
           {
             date: 'September 2025',
             title: 'Zwei Konzerte im September',
-            desc: 'Kalikoer, ein junger Chor aus Immenstadt im Allgäu, sang im September 2025 zwei Konzerte – ein Abend voller Energie, Emotionen und unvergesslicher Melodien.',
+            desc: 'Mit unserem Konzert "Don`t stop me now" begeistern wir in der IG Oma und in der Erlöserkirche Immenstadt. Zwei Abende voller Energie, Emotionen und unvergesslicher Melodien.',
             tag: 'Konzert'
           }
         ]
@@ -202,7 +196,7 @@ const de = {
       title: 'Impressum.'
     },
     headings: {
-      provider: 'Angaben gemäß § 5 TMG',
+      provider: 'Verantwortlich',
       contact: 'Kontakt',
       disclaimer: 'Haftungsausschluss',
       contentLiability: 'Haftung für Inhalte',
@@ -210,9 +204,9 @@ const de = {
       copyright: 'Urheberrecht'
     },
     text: {
-      contentLiability1: 'Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.',
+      contentLiability1: 'Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.',
       contentLiability2: 'Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.',
-      linksLiability1: 'Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.',
+      linksLiability1: 'Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. ',
       linksLiability2: 'Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.',
       copyright1: 'Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.',
       copyright2: 'Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.'
