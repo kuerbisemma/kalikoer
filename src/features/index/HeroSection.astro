@@ -5,7 +5,10 @@
       <h1>Chor in Immenstadt im Allgäu</h1>
       <p>Mit Leidenschaft und Freude am gemeinsamen Singen vereint kalikoer junge Stimmen aus dem Allgäu zu einem einzigartigen Klangerlebnis. Unser Chor, bestehend aus engagierten Sängerinnen und Sängern mit einem Altersdurchschnitt von etwa 35 Jahren, verbindet moderne Chormusik mit geselligem Miteinander.</p>
       <p>Ob gefühlvolle Balladen, schwungvolle Pop-Hits oder traditionelle Stücke – bei uns trifft musikalische Vielfalt auf pure Begeisterung.</p>
-      <a href="#kontakt" class="cta">Interesse am Mitsingen? Melde dich bei uns!</a>
+      <div class="cta-row">
+        <a href="#kontakt" class="cta">Interesse am Mitsingen? Melde dich bei uns!</a>
+        <a href="#audio-beispiele" class="cta cta-secondary">Hörproben anhören</a>
+      </div>
     </div>
     <div class="hero-img">
       <img src="/images/g4.jpg" alt="kalikoer – Chor in Immenstadt im Allgäu" />
@@ -51,6 +54,27 @@
     padding: 14px 34px;
     border-radius: 40px;
     transition: background .2s, transform .2s;
+  }
+
+  .hero-text .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .hero-text .cta-row .cta {
+    margin-top: 0;
+  }
+
+  .hero-text .cta-secondary {
+    background: transparent;
+    color: var(--teal);
+    border: 2px solid var(--teal);
+  }
+
+  .hero-text .cta-secondary:hover {
+    background: rgba(39, 93, 111, 0.08);
   }
 
   .hero-text .cta:hover { background: #1a3d4d; transform: translateY(-2px); }

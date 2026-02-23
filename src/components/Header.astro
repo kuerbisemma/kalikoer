@@ -14,6 +14,7 @@ const { activePage = 'home' } = Astro.props;
     <ul class="nav-links">
       <li><a href="index.html#das-sind-wir">Das sind wir</a></li>
       <li><a href="index.html#probe">Probe</a></li>
+      <li><a href="index.html#audio-beispiele">Hörproben</a></li>
       <li><a href="index.html#termine">Termine</a></li>
       <li><a href="archiv.html" class={activePage === 'archiv' ? 'active' : undefined}>Archiv</a></li>
       <li><a href="index.html#kontakt">Kontakt</a></li>
@@ -25,6 +26,7 @@ const { activePage = 'home' } = Astro.props;
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html#das-sind-wir" onclick="toggleMenu()">Das sind wir</a>
     <a href="index.html#probe" onclick="toggleMenu()">Probe</a>
+    <a href="index.html#audio-beispiele" onclick="toggleMenu()">Hörproben</a>
     <a href="index.html#termine" onclick="toggleMenu()">Termine</a>
     <a href="archiv.html" onclick="toggleMenu()">Archiv</a>
     <a href="index.html#kontakt" onclick="toggleMenu()">Kontakt</a>

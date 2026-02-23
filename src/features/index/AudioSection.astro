@@ -1,0 +1,85 @@
+---
+const tracks = [
+  { title: '900 Miles', artist: 'John Radford', src: '/audio/900 Miles, John Radford.mp3' },
+  { title: 'Winter Lullaby', artist: 'Pinkzebra', src: '/audio/Winter Lullaby, Pinkzebra.mp3' }
+];
+---
+
+<section id="audio-beispiele">
+  <div class="audio-stage">
+    <div class="audio-header">
+      <div class="section-tag">Hörproben</div>
+      <h2 class="section-heading">Hörproben.</h2>
+      <p>Hier findest du Songbeispiele zum Reinhören.</p>
+    </div>
+
+    <div class="audio-list">
+      {tracks.map((track) => (
+        <article class="audio-card">
+          <div class="audio-title">{track.title}</div>
+          <div class="audio-artist">{track.artist}</div>
+          <audio controls preload="none" src={track.src}>
+            Dein Browser unterstützt das Audio-Element nicht.
+          </audio>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  #audio-beispiele {
+    background: var(--sand);
+    padding: 90px 40px;
+  }
+
+  .audio-stage {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .audio-header {
+    margin-bottom: 26px;
+  }
+
+  .audio-header p {
+    color: #555;
+    margin-top: 10px;
+    max-width: 720px;
+  }
+
+  .audio-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .audio-card {
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 18px;
+  }
+
+  .audio-title {
+    color: var(--teal);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .audio-artist {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .audio-card audio {
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    .audio-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
