@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "4321:4321"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      CHOKIDAR_INTERVAL: "300"
+    command: npm run dev -- --host 0.0.0.0 --port 4321

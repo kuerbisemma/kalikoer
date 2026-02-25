@@ -7,6 +7,17 @@ Astro-basierte Version der Website mit Komponenten-Architektur und statischem Ou
 - `npm install`
 - `npm run dev`
 
+### Mit Docker Compose (lokale Entwicklung)
+
+- `docker compose up --build`
+- Website: `http://localhost:4321`
+
+Hinweise:
+
+- Hot Reload ist aktiviert und funktioniert auch mit Windows-Dateisystem-Mounts.
+- Bei Änderungen an `package.json` danach einmal neu bauen: `docker compose up --build`.
+- Stoppen mit `docker compose down`.
+
 ## Build
 
 - `npm run build`
