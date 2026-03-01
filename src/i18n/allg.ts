@@ -60,6 +60,9 @@ const allg = {
       title: 'Chor in Immenstadt im Allgäu',
       p1: 'Mit viel Herzbluat und Freid am Miteinandersinga bringt kalikoer junge Stimm aus em Allgäu zamma zu am bsondra Klangerlebnis. Unser Chor mit engagierte Sängerinna und Sänger verbindet moderne Chormusik mit ehrlicher Gemeinschaft.',
       p2: 'Egal ob ruhige Ballada, flotte Pop-Hits oder traditionelle Stückle – bei üs trifft Vielfalt auf pure Begeisterung.',
+      supportText: 'Wenn dir unsere Musik gefällt, unterstütze uns und',
+      supportLink: 'Buy me a coffee',
+      supportAria: 'kalikoer auf Buy me a coffee unterstütza',
       ctaJoin: 'Luscht auf Mitsinga? Meld di bei üs!',
       ctaAudio: 'Hörproba ahöra',
       imageAlt: 'kalikoer – Chor in Immenstadt im Allgäu'

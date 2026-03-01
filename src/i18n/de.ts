@@ -60,6 +60,9 @@ const de = {
       title: 'Kalikoer',
       p1: 'Mit Leidenschaft und Freude am gemeinsamen Singen vereint kalikoer junge Stimmen aus dem Allgäu zu einem einzigartigen Klangerlebnis. Unser Chor, bestehend aus engagierten Sängerinnen und Sängern mit einem Altersdurchschnitt von etwa 35 Jahren verbindet moderne Chormusik mit geselligem Miteinander.',
       p2: 'Gefühlvolle Balladen, schwungvolle Pop-Hits oder traditionelle Stücke – bei uns trifft musikalische Vielfalt auf pure Begeisterung.',
+      supportText: 'Wenn dir unsere Musik gefällt, unterstütze uns und',
+      supportLink: 'Buy me a coffee',
+      supportAria: 'kalikoer auf Buy me a coffee unterstützen',
       ctaJoin: 'Interesse am Mitsingen? Melde dich bei uns!',
       ctaAudio: 'Hörproben anhören',
       imageAlt: 'kalikoer, ein junger Chor aus Immenstadt im Allgäu beim Chorfest 2024 in Sonthofen.'

@@ -16,6 +16,18 @@ const t = getTranslations(language);
       <h1>{t.index.hero.title}</h1>
       <p>{t.index.hero.p1}</p>
       <p>{t.index.hero.p2}</p>
+      <p class="hero-support">
+        <span aria-hidden="true">☕</span>
+        {t.index.hero.supportText}{' '}
+        <a
+          href="https://buymeacoffee.com/kalikoer"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={t.index.hero.supportAria}
+        >
+          {t.index.hero.supportLink}
+        </a>
+      </p>
       <div class="cta-row">
         <a href="#kontakt" class="cta">{t.index.hero.ctaJoin}</a>
         <a href="#audio-beispiele" class="cta cta-secondary">{t.index.hero.ctaAudio}</a>
@@ -53,6 +65,23 @@ const t = getTranslations(language);
   }
 
   .hero-text p { color: #555; margin-bottom: 16px; line-height: 1.8; }
+
+  .hero-text .hero-support {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .hero-support a {
+    color: var(--teal);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 700;
+  }
+
+  .hero-support a:hover {
+    color: #1a3d4d;
+  }
 
   .hero-text .cta {
     display: inline-block;
