@@ -119,6 +119,10 @@ body.page-impressum {
   font-family: 'Rosario', sans-serif;
 }
 
+body.page-archiv {
+  background: var(--white);
+}
+
 h1, h2, h3, h4, h5, h6,
 .section-heading,
 .event-title,

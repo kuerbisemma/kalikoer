@@ -20,7 +20,7 @@ const t = getTranslations(language);
         <p>{t.index.community.p3}</p>
       </div>
       <div class="community-img">
-        <img src="/images/gemeinsam.jpg" alt={t.index.community.imageAlt} />
+        <img src="/images/kalikoer_gemeinsam.jpg" alt={t.index.community.imageAlt} />
       </div>
     </div>
   </div>
@@ -36,6 +36,9 @@ const t = getTranslations(language);
     align-items: center;
   }
 
+  .community-text { order: 2; }
+  .community-img { order: 1; }
+
   .community-text p { margin-bottom: 16px; color: #555; }
 
   .community-img {
@@ -48,6 +51,8 @@ const t = getTranslations(language);
 
   @media (max-width: 900px) {
     .community-grid { grid-template-columns: 1fr; }
+    .community-text { order: 1; }
+    .community-img { order: 2; }
     .community-img { aspect-ratio: 16/9; }
 
     .community-img {

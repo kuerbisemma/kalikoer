@@ -13,13 +13,21 @@ const t = getTranslations(language);
   <div class="container">
     <div class="conductor-grid">
       <div class="conductor-img">
-        <img src="/images/johannes.jpg" alt={t.index.conductor.imageAlt} />
+        <img src="/images/kalikoer_johannes.jpg" alt={t.index.conductor.imageAlt} />
       </div>
       <div class="conductor-text">
         <div class="section-tag">{t.index.conductor.tag}</div>
         <h2 class="section-heading">{t.index.conductor.title}</h2>
         <p>{t.index.conductor.p1}</p>
         <p>{t.index.conductor.p2}</p>
+        <a
+          href="https://www.instagram.com/kalikoer"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="conductor-cta conductor-cta-instagram"
+        >
+          Folge uns auf Instagram!
+        </a>
       </div>
     </div>
   </div>
@@ -43,6 +51,28 @@ const t = getTranslations(language);
 
   .conductor-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .conductor-text p { margin-bottom: 16px; color: #555; }
+
+  .conductor-cta {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 14px 34px;
+    border-radius: 40px;
+    transition: transform .2s, filter .2s;
+    text-transform: uppercase;
+  }
+
+  .conductor-cta-instagram {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  }
+
+  .conductor-cta:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.95);
+  }
 
   @media (max-width: 900px) {
     .conductor-grid { grid-template-columns: 1fr; }

@@ -17,7 +17,7 @@ const de = {
     contact: 'Kontakt'
   },
   footer: {
-    brandText: 'kalikoer ist ein junger Chor im Allgäu (Raum Kempten, Immenstadt und Sonthofen). Geprobt wird dienstags in Immenstadt.',
+    brandText: 'kalikoer ist ein junger Chor im Allgäu (Raum Kempten, Immenstadt und Sonthofen). Die Probe findet dienstags in Immenstadt statt.',
     navigation: 'Navigation',
     contact: 'Kontakt',
     home: 'Home',
@@ -27,7 +27,7 @@ const de = {
     archive: 'Archiv',
     dataProtection: 'Datenschutz',
     imprint: 'Impressum',
-    instagram: 'Instagram: Kalikör'
+    instagram: 'Instagram: Kalikoer'
   },
   cookieBanner: {
     title: 'Wir verwenden Cookies.',
@@ -65,22 +65,20 @@ const de = {
       supportAria: 'kalikoer auf Buy me a coffee unterstützen',
       ctaJoin: 'Interesse am Mitsingen? Melde dich bei uns!',
       ctaAudio: 'Hörproben anhören',
-      imageAlt: 'kalikoer, ein junger Chor aus Immenstadt im Allgäu beim Chorfest 2024 in Sonthofen.'
+      imageAlt: 'kalikoer, ein junger Chor aus Immenstadt im Allgäu beim Chorfest 2026 in Immenstadt.'
     },
     conductor: {
       tag: 'Das sind wir',
       title: 'Hallo!',
       p1: 'Ich bin Johannes, der Chorleiter von kalikoer. Musik begleitet mich schon seit vielen Jahren. Ich spiele mehrere Instrumente, aktiv vor allem Klavier und Orgel, und singe selbst in verschiedenen Chören und Ensembles. Ich bin kein Profi, aber durch die vielen Jahre Praxis bringe ich jede Menge Erfahrung und vor allem viel Herzblut mit 😊',
-      p2: 'Bei kalikoer steht für mich vor allem die Freude am gemeinsamen Singen im Mittelpunkt. Und genau die verbindet uns. Bei uns treffen Lehrer auf Architekten, Physiotherapeutinnen auf Software-Entwickler, Marketingprofis auf Hüttenwirte – ein herrlich bunter Mix an Menschen. Was uns zusammenschweißt? Die Begeisterung für Musik. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die meine Leidenschaft zur Musik teilen.',
+      p2: 'Bei kalikoer steht für mich vor allem die Freude am gemeinsamen Singen im Mittelpunkt. Und genau die verbindet uns. Bei uns treffen Lehrer auf Architekten, Physiotherapeutinnen auf Software-Entwickler, Marketingprofis auf Hüttenwirte – ein herrlich bunter Mix an Menschen. Was uns zusammenschweißt? Die Begeisterung für Musik. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die unsere Leidenschaft zur Musik teilen.',
       imageAlt: 'Johannes Golda, Chorleiter von kalikoer, einem jungen Chor aus Immenstadt im Allgäu.'
     },
     rehearsal: {
       tag: 'Mitsingen',
       title: 'Probe.',
-      intro1: 'Geprägt von positiver Energie, Freude und Gemeinschaft:',
-      intro2: 'Unsere Proben finden immer dienstags um 19:10 Uhr statt.',
-      intro3: 'Wir arbeiten an diversen Stücken und bereiten uns so auf zwei bis drei Konzerte im Jahr vor.',
-      imageAlt: 'Kalikoer beim Konzert im September 2025 in der Erlöserkirche Immenstadt.',
+      intro1: 'Unsere Chorprobe ist mehr als nur Üben. Geprägt von positiver Energie, Freude und Gemeinschaft ist sie unser wöchentlicher Energie-Booster. Mit Spaß arbeiten wir an diversen Stücken und bereiten uns auf zwei bis drei Konzerte im Jahr vor.',
+      imageAlt: 'Kalikoer beim Probentag im März 2026',
       cardTitle: 'Unsere Chorprobe',
       cardTime: 'Dienstags · 19:10 Uhr',
       points: ['Kalvarienbergstraße 27, 87509 Immenstadt', 'Stimmbildung', 'Kostenlose Übungstracks zur Vor- und Nachbereitung'],
@@ -88,7 +86,7 @@ const de = {
     },
     community: {
       tag: 'Mehr als Musik',
-      title: 'Gemeinsam.',
+      title: 'Gemeinschaft.',
       p1: 'Nach dem gemeinsamen Singen lassen wir den Abend gerne entspannt ausklingen. Oft sitzen wir noch gemütlich zusammen, plaudern und genießen ein kühles Getränk.',
       p2: 'Auch außerhalb der Proben unternehmen wir gerne etwas zusammen. Wir besuchen gemeinsam Konzerte, schauen uns Ausstellungen an oder unternehmen einfach spontan was. Bei uns geht es unkompliziert und herzlich zu. Uns verbindet nicht nur die Musik, sondern auch die Freude an gemeinsamen Erlebnissen.',
       p3: 'Bei kalikoer fühlt sich jeder wohl und genau das macht unseren Chor so besonders.',
@@ -97,7 +95,7 @@ const de = {
     audio: {
       tag: 'Klangbeispiele',
       title: 'Hörproben.',
-      text: 'Hier findest du Beispiele von unseren Live-Auftritten zum Reinhören. Viel Spaß beim Anhören!',
+      text: 'Hier findest du Beispiele von unseren Live-Auftritten. Viel Spaß beim Anhören!',
       unsupported: 'Dein Browser unterstützt das Audio-Element nicht.'
     },
     events: {
@@ -158,7 +156,7 @@ const de = {
             date: '17. & 19. Juli 2026',
             title: 'Are you still listening?',
             desc: 'Im Juli 2026 singt kalikoer aus Immenstadt bekannte Titel aus Streaming, Serien und Filmklassiker. Zwei Abende voller Gänsehaut und großer Melodien – Folge 1 in Blaichach, Folge 2 in der Erlöserkirche Immenstadt.',
-            tag: 'Konzert'
+            
           }
         ]
       },
@@ -169,25 +167,24 @@ const de = {
             date: '6. Dezember 2025',
             title: 'Adventskonzert',
             desc: 'Weihnachtliche Klänge in der Kirche gab\'s zur Adventszeit im Rahmen der Orgelmatinee in der Kirche St. Michael in Immenstadt.',
-            tag: 'Konzert'
           },
           {
             date: '13. Dezember 2025',
             title: 'Bühler Seeweihnacht',
-            desc: 'Eiskalt aber wunderschön war\'s auch bei der Bühler Seeweihnacht in Immenstadt.',
-            tag: 'Auftritt'
+            desc: 'Eiskalt aber wunderschön war\'s bei der Bühler Seeweihnacht in Immenstadt.',
+
           },
           {
             date: 'Herbst 2025',
             title: 'Spende an IG OMa e.V. und Allgäu Hospiz',
             desc: 'kalikoer spendet einen Teil der Konzerteinnahmen an die IG OMa e.V. und das Allgäu Hospiz – Musik, die Gutes tut.',
-            tag: 'Soziales Engagement'
+
           },
           {
             date: 'September 2025',
             title: 'Zwei Konzerte im September',
-            desc: 'Mit unserem Konzert "Don`t stop me now" begeistern wir in der IG Oma und in der Erlöserkirche Immenstadt. Zwei Abende voller Energie, Emotionen und unvergesslicher Melodien.',
-            tag: 'Konzert'
+            desc: 'Mit unserem Konzert "Don`t stop me now" begeisterten wir in der IG Oma und in der Erlöserkirche Immenstadt. Zwei Abende voller Energie, Emotionen und unvergesslicher Melodien.',
+
           }
         ]
       }

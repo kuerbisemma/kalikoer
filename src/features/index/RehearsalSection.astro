@@ -18,17 +18,15 @@ const t = getTranslations(language);
         <p class="probe-intro">{t.index.rehearsal.intro1}</p>
         <p class="probe-intro"><strong>{t.index.rehearsal.intro2}</strong></p>
         <p class="probe-intro-last">{t.index.rehearsal.intro3}</p>
+
+        <div class="probe-time">{t.index.rehearsal.cardTime}</div>
+        <ul class="probe-points">
+          {t.index.rehearsal.points.map((point) => <li>{point}</li>)}
+        </ul>
+        <a href="#kontakt" class="probe-cta">{t.index.rehearsal.cta}</a>
       </div>
       <div>
-        <img src="/images/g5.jpg" alt={t.index.rehearsal.imageAlt} class="probe-photo" />
-        <div class="probe-card">
-          <h3>{t.index.rehearsal.cardTitle}</h3>
-          <div class="time">{t.index.rehearsal.cardTime}</div>
-          <ul class="probe-card-points">
-            {t.index.rehearsal.points.map((point) => <li>{point}</li>)}
-          </ul>
-          <a href="#kontakt" class="probe-card-link">{t.index.rehearsal.cta}</a>
-        </div>
+        <img src="/images/kalikoer_probentag_2026-03.jpg" alt={t.index.rehearsal.imageAlt} class="probe-photo" />
       </div>
     </div>
   </div>
@@ -47,83 +45,74 @@ const t = getTranslations(language);
   .probe-intro { color: #555; margin-bottom: 16px; }
   .probe-intro-last { color: #555; }
 
-  .probe-card {
-    background: var(--teal);
-    color: var(--white);
-    border-radius: 12px;
-    padding: 36px 32px;
-    display: grid;
-    gap: 12px;
-  }
-
-  .probe-card-kicker {
-    font-size: 11px;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
+  .probe-time {
+    font-size: 1.05rem;
     font-weight: 700;
-    opacity: .8;
+    color: var(--dark);
+    margin: 20px 0 10px;
   }
 
-  .probe-card h3 { font-size: 1.5rem; margin-bottom: 0; font-weight: 800; line-height: 1.2; }
-  .probe-card p { opacity: .9; }
-
-  .probe-card .time {
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 800;
-    margin: 4px 0 6px;
-    line-height: 1.1;
-  }
-
-  .probe-card-points {
+  .probe-points {
     list-style: none;
     display: grid;
     gap: 8px;
-    margin: 2px 0 12px;
+    margin: 2px 0 20px;
     padding: 0;
     font-size: 0.98rem;
     line-height: 1.45;
+    color: #555;
   }
 
-  .probe-card-points li {
+  .probe-points li {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    opacity: .95;
   }
 
-  .probe-card-points li::before {
+  .probe-points li::before {
     content: '✓';
     font-weight: 800;
+    color: var(--teal);
     line-height: 1;
     margin-top: 4px;
     flex-shrink: 0;
   }
 
-  .probe-card-link {
-    display: inline-flex;
-    width: fit-content;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    border-radius: 999px;
-    border: 1px solid var(--white);
+  .probe-cta {
+    display: inline-block;
+    margin-top: 4px;
+    background: var(--teal);
     color: var(--white);
-    font-size: 13px;
     font-weight: 700;
-    letter-spacing: .6px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 14px 34px;
+    border-radius: 40px;
+    transition: background .2s, transform .2s;
     text-transform: uppercase;
-    transition: transform .2s, opacity .2s;
   }
 
-  .probe-card-link:hover {
+  .probe-cta:hover {
+    background: #1a3d4d;
     transform: translateY(-2px);
-    opacity: .9;
+  }
+
+  .probe-photo {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
   }
 
   .probe-photo { width: 100%; border-radius: 12px; display: block; margin-bottom: 16px; object-fit: cover; }
 
   @media (max-width: 900px) {
     .probe-grid { grid-template-columns: 1fr; }
+
+    .probe-cta {
+      width: 100%;
+      text-align: center;
+    }
 
     .probe-photo {
       width: calc(100% + 48px);
