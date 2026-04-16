@@ -1,50 +1,149 @@
----
-import { getTranslations, type Language } from '../../i18n';
-
-interface Props {
-  language?: Language;
-}
-
-const { language = 'de' } = Astro.props;
-const t = getTranslations(language);
----
-
 <section id="instagram">
   <div class="container">
-    <div class="section-tag">{t.index.instagram.tag}</div>
-    <h2 class="section-heading">{t.index.instagram.title}</h2>
-    <div class="instagram-placeholder">
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      <p>{t.index.instagram.text}</p>
-      <a href="https://www.instagram.com/kalikoer?igsh=dDB3MmRvb2IwZDB3&utm_source=qr" target="_blank" rel="noopener">{t.index.instagram.cta}</a>
+    <div class="newsletter-content">
+      <div class="section-tag">Newsletter</div>
+      <h2 class="section-heading">Bleib auf dem Laufenden.</h2>
+      <p>Melde dich zu unserem Newsletter an, um auf dem Laufenden zu bleiben und keine Konzerte mehr zu verpassen! Du wirst ca. 3-4 mal im Jahr von uns hören, nicht öfter – versprochen 😉 </p>
+
+      <form class="newsletter-form" method="POST" action="https://b9f75ba7.sibforms.com/serve/MUIFAPfeWxF7WwQcLsNrVrJGSPLQW4jy8YXtZsGAf4JDHjXWuw1hHUtPlILE8Os2rkVVfD9kyVwHJq7Poutmhv2ujjCLelf0Kc0ciehvS_X-Mny9sKa8kAfM8gazwrVOO8you89XUL7Zx_KbdaF-YoiBRlGB9cbzcHjdz0_hR7ppAZgxn8pnWrEi-rsQb45gdZWFwZDpzeecs9TiUg==" data-type="subscription">
+        <div class="form-group">
+          <input
+            type="email"
+            id="newsletter-email"
+            name="EMAIL"
+            autocomplete="email"
+            placeholder="Gib hier deine E-Mail an."
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn-submit">Anmelden</button>
+
+        <p class="newsletter-privacy">
+          Indem du das Formular absendest, erklärst du dich einverstanden, dass die von dir angegebenen persönlichen Informationen an Brevo zur Bearbeitung übertragen werden gemäß den
+          <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Brevo.</a>
+        </p>
+
+        <input type="text" name="email_address_check" value="" class="input-hidden" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="locale" value="de" />
+      </form>
     </div>
   </div>
 </section>
 
 <style>
-  #instagram { background: var(--white); text-align: center; }
-
-  .instagram-placeholder {
-    max-width: 600px;
-    margin: 40px auto 0;
-    background: var(--cream);
-    border: 2px dashed var(--slate);
-    border-radius: 12px;
-    padding: 48px 32px;
-    color: var(--slate);
+  #instagram {
+    background: var(--white);
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 
-  .instagram-placeholder svg { width: 48px; height: 48px; fill: var(--slate); margin-bottom: 16px; }
-  .instagram-placeholder p { margin-bottom: 20px; font-size: 14px; }
+  .newsletter-content p {
+    color: #555;
+    margin-bottom: 16px;
+  }
 
-  .instagram-placeholder a {
-    display: inline-block;
-    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  .newsletter-highlight {
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .newsletter-form {
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .newsletter-form form {
+    width: 100%;
+  }
+
+  .form-group {
+    margin-bottom: 22px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--dark);
+    letter-spacing: .5px;
+  }
+
+  input[type=email] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--white);
+    color: var(--text);
+    transition: border-color .2s;
+  }
+
+  input[type=email]:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+
+  .btn-submit {
+    width: 30%;
+    min-width: 180px;
+    text-align: center;
+    background: var(--teal);
     color: var(--white);
     font-weight: 700;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 1px;
-    padding: 12px 28px;
+    padding: 14px 40px;
+    border: none;
     border-radius: 40px;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+    text-transform: uppercase;
+  }
+
+  .btn-submit:hover {
+    background: #1a3d4d;
+    transform: translateY(-2px);
+  }
+
+  .newsletter-privacy {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .newsletter-privacy a {
+    color: var(--teal);
+    text-decoration: underline;
+  }
+
+  .input-hidden {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (max-width: 900px) {
+    #instagram {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+
+    #instagram {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .btn-submit {
+      width: 30%;
+      min-width: 150px;
+    }
   }
 </style>
