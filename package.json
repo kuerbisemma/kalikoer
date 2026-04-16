@@ -8,6 +8,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@fontsource/roboto-slab": "^5.2.8",
+    "@fontsource/rosario": "^5.2.8",
     "astro": "^5.2.0"
   }
 }

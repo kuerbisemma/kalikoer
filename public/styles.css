@@ -1,4 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800&family=Rosario:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@font-face {
+  font-family: 'Rosario';
+  src: url('/fonts/rosario/rosario-latin-400-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rosario';
+  src: url('/fonts/rosario/rosario-latin-600-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rosario';
+  src: url('/fonts/rosario/rosario-latin-700-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('/fonts/roboto-slab/roboto-slab-latin-400-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('/fonts/roboto-slab/roboto-slab-latin-600-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('/fonts/roboto-slab/roboto-slab-latin-700-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('/fonts/roboto-slab/roboto-slab-latin-800-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
 
 /* Combined stylesheet for all pages */
 
