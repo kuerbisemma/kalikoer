@@ -17,7 +17,7 @@ const de = {
     contact: 'Kontakt'
   },
   footer: {
-    brandText: 'kalikoer ist ein junger Chor im Allgäu (Raum Kempten, Immenstadt und Sonthofen). Die Probe findet dienstags in Immenstadt statt.',
+    brandText: 'kalikoer ist ein junger Chor im Allgäu im Raum Kempten, Immenstadt und Sonthofen. Die Probe findet dienstags in Immenstadt statt.',
     navigation: 'Navigation',
     contact: 'Kontakt',
     home: 'Home',
@@ -47,19 +47,19 @@ const de = {
     },
     impressum: {
       title: 'Impressum – kalikoer',
-      description: 'Impressum von kalikoer, Chor in Immenstadt im Allgäu.'
+      description: 'Impressum von kalikoer, dem jungen Chor im Allgäu.'
     },
     datenschutz: {
       title: 'Datenschutz – kalikoer',
-      description: 'Datenschutzerklärung von kalikoer, Chor in Immenstadt im Allgäu.'
+      description: 'Datenschutzerklärung von kalikoer, ein moderner Chor aus Immenstadt im Allgäu.'
     }
   },
   index: {
     hero: {
-      tag: 'Chor im Allgäu',
-      title: 'Kalikoer',
-      p1: 'Mit Leidenschaft und Freude am gemeinsamen Singen vereint kalikoer junge Stimmen aus dem Allgäu zu einem einzigartigen Klangerlebnis. Unser Chor, bestehend aus engagierten Sängerinnen und Sängern mit einem Altersdurchschnitt von etwa 35 Jahren verbindet moderne Chormusik mit geselligem Miteinander.',
-      p2: 'Gefühlvolle Balladen, schwungvolle Pop-Hits oder traditionelle Stücke – bei uns trifft musikalische Vielfalt auf pure Begeisterung.',
+      tag: 'kalikoer',
+      title: 'Chor im Allgäu',
+      p1: 'Kalikoer ist ein moderner, junger Chor in Immenstadt im Allgäu. Mit Leidenschaft und echter Freude am gemeinsamen Singen bringen wir junge Stimmen aus dem Allgäu, Kempten und Sonthofen zusammen und schaffen so ein einzigartiges Klangerlebnis.',
+      p2: 'Ob gefühlvolle Balladen, schwungvolle Pop-Hits oder klassische Stücke – unser Chor steht für musikalische Vielfalt und pure Begeisterung. Unsere engagierten Sängerinnen und Sänger, mit einem Altersdurchschnitt von ca. 35 Jahren, teilen neben der Liebe zur Musik auch den Spaß an Gemeinschaft und gemeinsamen Auftritten.',
       supportText: 'Wenn dir unsere Musik gefällt, unterstütze uns und',
       supportLink: 'Buy me a coffee',
       supportAria: 'kalikoer auf Buy me a coffee unterstützen',
@@ -68,15 +68,15 @@ const de = {
       imageAlt: 'kalikoer, ein junger Chor aus Immenstadt im Allgäu beim Chorfest 2026 in Immenstadt.'
     },
     conductor: {
-      tag: 'Das sind wir',
-      title: 'Hallo!',
-      p1: 'Ich bin Johannes, der Chorleiter von kalikoer. Musik begleitet mich schon seit vielen Jahren. Ich spiele mehrere Instrumente, aktiv vor allem Klavier und Orgel, und singe selbst in verschiedenen Chören und Ensembles. Ich bin kein Profi, aber durch die vielen Jahre Praxis bringe ich jede Menge Erfahrung und vor allem viel Herzblut mit 😊',
-      p2: 'Bei kalikoer steht für mich vor allem die Freude am gemeinsamen Singen im Mittelpunkt. Und genau die verbindet uns. Bei uns treffen Lehrer auf Architekten, Physiotherapeutinnen auf Software-Entwickler, Marketingprofis auf Hüttenwirte – ein herrlich bunter Mix an Menschen. Was uns zusammenschweißt? Die Begeisterung für Musik. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die unsere Leidenschaft zur Musik teilen.',
+      tag: 'Hallo!',
+      title: 'Das sind wir.',
+      p1: 'Ich bin Johannes, der Chorleiter von kalikoer. Ich bin kein Profi – aber genau das macht’s vielleicht sympathisch 😉. Was ich mitbringe, ist jede Menge Erfahrung, Leidenschaft für Chormusik und vor allem richtig viel Herzblut für das gemeinsame Singen.',
+      p2: 'Bei kalikoer steht genau das im Mittelpunkt: die Freude am Miteinandersingen. Und genau die verbindet uns. Bei uns treffen Lehrer auf Architekten, Physiotherapeutinnen auf Software-Entwickler, Marketingprofis auf Hüttenwirte – ein herrlich bunter Mix an Menschen. Was uns zusammenschweißt? Die Begeisterung für Musik. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die unsere Leidenschaft zur Musik teilen.',
       imageAlt: 'Johannes Golda, Chorleiter von kalikoer, einem jungen Chor aus Immenstadt im Allgäu.'
     },
     rehearsal: {
-      tag: 'Mitsingen',
-      title: 'Probe.',
+      tag: 'Probe',
+      title: 'Chor zum Mitsingen.',
       intro1: 'Unsere Chorprobe ist mehr als nur Üben. Geprägt von positiver Energie, Freude und Gemeinschaft ist sie unser wöchentlicher Energie-Booster. Mit Spaß arbeiten wir an diversen Stücken und bereiten uns auf zwei bis drei Konzerte im Jahr vor.',
       imageAlt: 'Kalikoer beim Probentag im März 2026',
       cardTitle: 'Unsere Chorprobe',
@@ -126,7 +126,6 @@ const de = {
     contact: {
       tag: 'Kontakt',
       title: 'Anfragen? Anregungen? Lust, mitzumachen?',
-      highlight: "Meld' dich bei uns.",
       text: 'Du suchst einen Chor für deinen Geburtstag, deine Hochzeit oder deine Scheidung? Oder hast du Lust, mitzusingen? Dann melde dich gerne. Zurzeit suchen wir vor allem Männerstimmen. Wenn du Freude am Singen hast und Gesangserfahrung hast, beispielsweise im Schulchor, anderen Ensembles o.ä., dann bist du bei uns genau richtig!',
       form: {
         name: 'Name *',
