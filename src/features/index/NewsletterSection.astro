@@ -201,22 +201,23 @@
           submitBtn.textContent = 'Wird versendet...';
         }
 
-        // Anfrage an den lokalen API-Endpoint (kein CORS-Problem)
-        const response = await fetch('/api/newsletter', {
+        // Direkter Request an Brevo, damit die Seite rein statisch bleiben kann.
+        await fetch('https://b9f75ba7.sibforms.com/serve/MUIFAPfeWxF7WwQcLsNrVrJGSPLQW4jy8YXtZsGAf4JDHjXWuw1hHUtPlILE8Os2rkVVfD9kyVwHJq7Poutmhv2ujjCLelf0Kc0ciehvS_X-Mny9sKa8kAfM8gazwrVOO8you89XUL7Zx_KbdaF-YoiBRlGB9cbzcHjdz0_hR7ppAZgxn8pnWrEi-rsQb45gdZWFwZDpzeecs9TiUg==', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
-          body: JSON.stringify({ email }),
+          mode: 'no-cors',
+          body: new URLSearchParams({
+            EMAIL: email,
+            email_address_check: '',
+            locale: 'de',
+          }).toString(),
         });
 
-        if (response.ok) {
-          // Erfolgsmeldung anzeigen
-          showMessage('Vielen Dank. Du erhältst in Kürze eine E-Mail.', 'success');
-          form.reset();
-        } else {
-          showMessage('Es gab ein Problem beim Absenden. Bitte versuche es später erneut.', 'error');
-        }
+        // Bei no-cors kann der Response nicht ausgelesen werden, daher optimistische Erfolgsmeldung.
+        showMessage('Vielen Dank. Du erhältst in Kürze eine E-Mail.', 'success');
+        form.reset();
       } catch (error) {
         console.error('Newsletter subscription error:', error);
         showMessage('Es gab ein Problem beim Absenden. Bitte versuche es später erneut.', 'error');

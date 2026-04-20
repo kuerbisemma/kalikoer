@@ -199,7 +199,7 @@ const de = {
     hero: {
       tag: 'Netzwerk',
       title: 'Partner.',
-      text: 'Unsere Partner im Überblick: Danke an alle, die uns unterstützen und dabei helfen, kulturelle Vielfalt zu leben und unvergesliche Veranstaltungen möglich zu machen.'
+      text: 'Unsere Partner im Überblick: Danke an alle, die uns unterstützen und dabei helfen, kulturelle Vielfalt zu leben und unvergessliche Veranstaltungen möglich zu machen.'
     },
     cards: [
       {
