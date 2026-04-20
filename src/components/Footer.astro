@@ -8,6 +8,7 @@ interface Props {
 const { language = 'de' } = Astro.props;
 const t = getTranslations(language);
 const homeHref = language === 'allg' ? '/allg.html' : '/index.html';
+const partnerHref = language === 'allg' ? '/allg/partner.html' : '/partner.html';
 const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
 const imprintHref = language === 'allg' ? '/allg/impressum.html' : '/impressum.html';
 const dataProtectionHref = language === 'allg' ? '/allg/Datenschutz.html' : '/Datenschutz.html';
@@ -28,6 +29,7 @@ const dataProtectionHref = language === 'allg' ? '/allg/Datenschutz.html' : '/Da
         <li><a href={`${homeHref}#das-sind-wir`}>{t.footer.about}</a></li>
         <li><a href={`${homeHref}#probe`}>{t.footer.rehearsal}</a></li>
         <li><a href={`${homeHref}#termine`}>{t.footer.events}</a></li>
+        <li><a href={partnerHref}>{t.footer.partner}</a></li>
         <li><a href={archiveHref}>{t.footer.archive}</a></li>
         <li><a href={`${homeHref}#kontakt`}>{t.footer.contact}</a></li>
       </ul>

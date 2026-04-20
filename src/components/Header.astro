@@ -2,13 +2,14 @@
 import { getTranslations, type Language } from '../i18n';
 
 interface Props {
-  activePage?: 'home' | 'archiv' | 'impressum' | 'datenschutz';
+  activePage?: 'home' | 'archiv' | 'partner' | 'impressum' | 'datenschutz';
   language?: Language;
 }
 
 const { activePage = 'home', language = 'de' } = Astro.props;
 const t = getTranslations(language);
 const homeHref = language === 'allg' ? '/allg.html' : '/index.html';
+const partnerHref = language === 'allg' ? '/allg/partner.html' : '/partner.html';
 const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
 ---
 
@@ -22,6 +23,7 @@ const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
       <li><a href={`${homeHref}#probe`}>{t.header.rehearsal}</a></li>
       <li><a href={`${homeHref}#audio-beispiele`}>{t.header.audio}</a></li>
       <li><a href={`${homeHref}#termine`}>{t.header.events}</a></li>
+      <li><a href={partnerHref} class={activePage === 'partner' ? 'active' : undefined}>{t.header.partner}</a></li>
       <li><a href={archiveHref} class={activePage === 'archiv' ? 'active' : undefined}>{t.header.archive}</a></li>
       <li><a href={`${homeHref}#kontakt`}>{t.header.contact}</a></li>
     </ul>
@@ -34,6 +36,7 @@ const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
     <a href={`${homeHref}#probe`} onclick="toggleMenu()">{t.header.rehearsal}</a>
     <a href={`${homeHref}#audio-beispiele`} onclick="toggleMenu()">{t.header.audio}</a>
     <a href={`${homeHref}#termine`} onclick="toggleMenu()">{t.header.events}</a>
+    <a href={partnerHref} onclick="toggleMenu()">{t.header.partner}</a>
     <a href={archiveHref} onclick="toggleMenu()">{t.header.archive}</a>
     <a href={`${homeHref}#kontakt`} onclick="toggleMenu()">{t.header.contact}</a>
   </div>
@@ -42,9 +45,13 @@ const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
 <style>
   header {
     background: var(--white);
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1100;
     box-shadow: 0 2px 12px rgba(0,0,0,.08);
   }
 
@@ -80,7 +87,16 @@ const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
   .nav-links a:hover,
   .nav-links a.active { color: var(--teal); border-bottom-color: var(--teal); }
 
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    align-items: flex-end;
+    justify-content: center;
+    flex-shrink: 0;
+  }
   .hamburger span { display: block; width: 25px; height: 2px; background: var(--teal); border-radius: 2px; transition: .3s; }
 
   .mobile-menu {
@@ -111,5 +127,6 @@ const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
     .nav-links { display: none; }
     .hamburger { display: flex; }
     nav { padding: 0 24px; }
+    .logo { margin-right: auto; }
   }
 </style>

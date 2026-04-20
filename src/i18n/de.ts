@@ -13,6 +13,7 @@ const de = {
     rehearsal: 'Probe',
     audio: 'Hörproben',
     events: 'Termine',
+    partner: 'Partner',
     archive: 'Archiv',
     contact: 'Kontakt'
   },
@@ -24,6 +25,7 @@ const de = {
     about: 'Das sind wir',
     rehearsal: 'Probe',
     events: 'Termine',
+    partner: 'Partner',
     archive: 'Archiv',
     dataProtection: 'Datenschutz',
     imprint: 'Impressum',
@@ -44,6 +46,10 @@ const de = {
     archiv: {
       title: 'Archiv – kalikoer Chor in Immenstadt',
       description: 'Archiv von kalikoer, dem Chor in Immenstadt im Allgäu: Eindrücke, Konzerte und musikalische Rückblicke.'
+    },
+    partner: {
+      title: 'Partner – kalikoer Chor in Immenstadt',
+      description: 'Partner von kalikoer im Überblick.'
     },
     impressum: {
       title: 'Impressum – kalikoer',
@@ -186,6 +192,23 @@ const de = {
 
           }
         ]
+      }
+    ]
+  },
+  partner: {
+    hero: {
+      tag: 'Netzwerk',
+      title: 'Partner.',
+      text: 'Unsere Partner im Überblick: Danke an alle, die uns unterstützen und dabei helfen, kulturelle Vielfalt zu leben und unvergesliche Veranstaltungen möglich zu machen.'
+    },
+    cards: [
+      {
+        title: 'IG OMa e.V.',
+        desc: 'Die IG Oma ist eine Interessensgemeinschaft zur Förderung der dörflichen Entwicklung in Oberdorf und Martinszell. Darüber hinaus bietet die IG Oma Raum für vielfältige kulturelle Veranstaltungen. Auch wir hatten bereits die Gelegenheit, dort zu singen und Teil dieses besonderen Ortes zu sein, der Kreativität und Begegnung fördert.'
+      },
+      {
+        title: 'Erlöserkirche Immenstadt',
+        desc: 'In der Erlöserkirche Immenstadt durften wir im Sommer 2025 vor einem wunderbaren Publikum auftreten. Die Kirche bietet nicht nur eine großartige Akustik, sondern auch eine herzliche Atmosphäre, die unsere Musik perfekt ergänzt. Wir freuen uns auf weitere gemeinsame Projekte und Konzerte in diesem besonderen Raum.'
       }
     ]
   },

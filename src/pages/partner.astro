@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../features/partner/HeroSection.astro';
+import PartnerSection from '../features/partner/PartnerSection.astro';
+import { getTranslations } from '../i18n';
+
+const language = 'de' as const;
+const t = getTranslations(language);
+---
+
+<BaseLayout
+  title={t.pageMeta.partner.title}
+  description={t.pageMeta.partner.description}
+  canonicalPath="/partner"
+  languageBasePath="/partner"
+  language={language}
+  bodyClass="page-partner"
+  activePage="partner"
+  contactHref="index.html#kontakt"
+>
+  <HeroSection language={language} />
+  <PartnerSection language={language} />
+</BaseLayout>

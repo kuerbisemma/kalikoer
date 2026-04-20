@@ -5,7 +5,7 @@
       <h2 class="section-heading">Bleib auf dem Laufenden.</h2>
       <p>Mit unserem Newsletter verpasst du keine Konzerte, Termine oder Specials mehr. Du wirst maximal 3-4 mal im Jahr von uns hören, nicht öfter – versprochen 😉 </p>
 
-      <form class="newsletter-form" method="POST" action="https://b9f75ba7.sibforms.com/serve/MUIFAPfeWxF7WwQcLsNrVrJGSPLQW4jy8YXtZsGAf4JDHjXWuw1hHUtPlILE8Os2rkVVfD9kyVwHJq7Poutmhv2ujjCLelf0Kc0ciehvS_X-Mny9sKa8kAfM8gazwrVOO8you89XUL7Zx_KbdaF-YoiBRlGB9cbzcHjdz0_hR7ppAZgxn8pnWrEi-rsQb45gdZWFwZDpzeecs9TiUg==" data-type="subscription">
+      <form class="newsletter-form" id="newsletter-form">
         <div class="form-group">
           <input
             type="email"
@@ -19,13 +19,14 @@
 
         <button type="submit" class="btn-submit">Anmelden</button>
 
+        <p class="form-message" id="form-message" style="display: none;"></p>
+
         <p class="newsletter-privacy">
           Indem du das Formular absendest, erklärst du dich einverstanden, dass die von dir angegebenen persönlichen Informationen an Brevo übertragen werden gemäß der
           <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Brevo.</a>
         </p>
 
         <input type="text" name="email_address_check" value="" class="input-hidden" tabindex="-1" autocomplete="off" />
-        <input type="hidden" name="locale" value="de" />
       </form>
     </div>
   </div>
@@ -130,6 +131,26 @@
     pointer-events: none;
   }
 
+  .form-message {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  .form-message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
+
+  .form-message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+
   @media (max-width: 900px) {
     #instagram {
       padding-top: 64px;
@@ -147,3 +168,79 @@
     }
   }
 </style>
+
+<script>
+  // Newsletter Form Handler für DSGVO-Konformität
+  const form = document.getElementById('newsletter-form') as HTMLFormElement;
+  const messageEl = document.getElementById('form-message') as HTMLElement;
+  const submitBtn = form?.querySelector('.btn-submit') as HTMLButtonElement;
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = (form.querySelector('#newsletter-email') as HTMLInputElement).value;
+      const honeypot = (form.querySelector('[name="email_address_check"]') as HTMLInputElement).value;
+
+      // Spam-Check: Honey Pot sollte leer sein
+      if (honeypot) {
+        console.log('Spam detected');
+        return;
+      }
+
+      // Email-Validierung
+      if (!email || !email.includes('@')) {
+        showMessage('Bitte gib eine gültige E-Mail-Adresse ein.', 'error');
+        return;
+      }
+
+      try {
+        // Button deaktivieren während des Requests
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Wird versendet...';
+        }
+
+        // Anfrage an den lokalen API-Endpoint (kein CORS-Problem)
+        const response = await fetch('/api/newsletter', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        });
+
+        if (response.ok) {
+          // Erfolgsmeldung anzeigen
+          showMessage('Vielen Dank. Du erhältst in Kürze eine E-Mail.', 'success');
+          form.reset();
+        } else {
+          showMessage('Es gab ein Problem beim Absenden. Bitte versuche es später erneut.', 'error');
+        }
+      } catch (error) {
+        console.error('Newsletter subscription error:', error);
+        showMessage('Es gab ein Problem beim Absenden. Bitte versuche es später erneut.', 'error');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Anmelden';
+        }
+      }
+    });
+  }
+
+  function showMessage(text: string, type: 'success' | 'error') {
+    if (messageEl) {
+      messageEl.textContent = text;
+      messageEl.className = `form-message ${type}`;
+      messageEl.style.display = 'block';
+
+      // Message nach 5 Sekunden ausblenden (bei Success)
+      if (type === 'success') {
+        setTimeout(() => {
+          messageEl.style.display = 'none';
+        }, 5000);
+      }
+    }
+  }
+</script>

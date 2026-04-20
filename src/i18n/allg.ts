@@ -13,6 +13,7 @@ const allg = {
     rehearsal: 'Prob',
     audio: 'Hörproba',
     events: 'Termine',
+    partner: 'Partner',
     archive: 'Archiv',
     contact: 'Kontakt'
   },
@@ -24,6 +25,7 @@ const allg = {
     about: 'Mir san mir',
     rehearsal: 'Prob',
     events: 'Termine',
+    partner: 'Partner',
     archive: 'Archiv',
     dataProtection: 'Datenschutz',
     imprint: 'Impressum',
@@ -44,6 +46,10 @@ const allg = {
     archiv: {
       title: 'Archiv – kalikoer Chor in Immenstadt',
       description: 'Archiv vo kalikoer: Eindrück, Konzerte und musikalische Rückblick.'
+    },
+    partner: {
+      title: 'Partner – kalikoer Chor in Immenstadt',
+      description: 'Partner vo kalikoer im Überblick.'
     },
     impressum: {
       title: 'Impressum – kalikoer',
@@ -196,6 +202,23 @@ const allg = {
             tag: 'Konzert'
           }
         ]
+      }
+    ]
+  },
+  partner: {
+    hero: {
+      tag: 'Netzwerk',
+      title: 'Partner.',
+      text: 'Unsere Partner im Überblick.'
+    },
+    cards: [
+      {
+        title: 'IG OMa e.V.',
+        desc: 'Platzhaltertext: Do stoht bald a kurze Beschreibung vo unserem Partner.'
+      },
+      {
+        title: 'Erlöserkirche Immenstadt',
+        desc: 'Platzhaltertext: Do stoht bald a kurze Beschreibung vo unserem Partner.'
       }
     ]
   },

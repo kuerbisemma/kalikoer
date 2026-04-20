@@ -7,10 +7,10 @@ import { getTranslations, type Language } from '../i18n';
 
 interface Props {
   title: string;
-  bodyClass: 'page-index' | 'page-archiv' | 'page-impressum' | 'page-datenschutz';
-  activePage?: 'home' | 'archiv' | 'impressum' | 'datenschutz';
+  bodyClass: 'page-index' | 'page-archiv' | 'page-partner' | 'page-impressum' | 'page-datenschutz';
+  activePage?: 'home' | 'archiv' | 'partner' | 'impressum' | 'datenschutz';
   language?: Language;
-  languageBasePath?: '/' | '/archiv' | '/impressum' | '/Datenschutz';
+  languageBasePath?: '/' | '/archiv' | '/partner' | '/impressum' | '/Datenschutz';
   contactHref?: string;
   description?: string;
   canonicalPath?: string;
