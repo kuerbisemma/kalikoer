@@ -165,6 +165,12 @@ const allg = {
             title: 'Are you still listening?',
             desc: 'Im Juli 2026 singt dr junge Chor kalikoer aus Immenstadt bekannte Titel aus Streaming, Serien und Filmklassiker. Zwei Obede voller Gänsehaut und großer Melodie – Folge 1 in Blaichach, Folge 2 in dr Erlöserkirche Immenstadt.',
             tag: 'Konzert'
+          },
+          {
+            date: '4. Juli 2026',
+            title: 'Salva me',
+            desc: 'Anlässlich vom 900-jährige Jubiläum vo dr St. Verena Kirch in Fischa hät kalikoer dr Gottesdienscht musikalisch mitgstalta – mit Musik vo John Rutter, Marco Frisina und Coldplay.',
+            tag: 'Gottesdienst'
           }
         ]
       },

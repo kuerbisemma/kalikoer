@@ -161,7 +161,12 @@ const de = {
             date: '17. & 19. Juli 2026',
             title: 'Are you still listening?',
             desc: 'Im Juli 2026 singt kalikoer aus Immenstadt bekannte Titel aus Streaming, Serien und Filmklassiker. Zwei Abende voller Gänsehaut und großer Melodien – Folge 1 in Blaichach, Folge 2 in der Erlöserkirche Immenstadt.',
-            
+
+          },
+          {
+            date: '4. Juli 2026',
+            title: 'Salva me',
+            desc: 'Anlässlich des 900-jährigen Jubiläums der St. Verena Kirche in Fischen haben wir den Gottesdienst musikalisch mitgestaltet – mit Musik von John Rutter, Marco Frisina und Coldplay.',
           }
         ]
       },
