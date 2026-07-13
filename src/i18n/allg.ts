@@ -113,12 +113,14 @@ const allg = {
       cards: [
         {
           date: '17. Juli 2026',
+          time: '19:00 Uhr (Einlass 18:30 Uhr)',
           title: 'Are you still listening? – Folge 1',
           text: 'Wer kennt\'s it: „Nur no a Folge..nur no kurz weiterschaua.."?! Amazon, Netflix und Co. braucht\'r an dem Obed it. Mir bringat die größte Songs aus Serien, Streaming-Highlights und Blockbuster live auf d\'Bühne. A Konzert wie dr perfekte Serienobed: mol laut, mol leise, mol episch. Popcorn gibt\'s keins, aber Gänsehaut, viel Freid und Melodie, wo no lang nachklingat.',
           meta: ['Sonthofener Str. 41, 87544 Blaichach', 'Parkplatz am Bahnhof (Immenstädter Str. 6) oder Weidachstraße']
         },
         {
           date: '19. Juli 2026',
+          time: '19:00 Uhr (Einlass 18:30 Uhr)',
           title: 'Are you still listening? – Folge 2',
           text: 'Ihr händ denkt, oine Folge reicht? Nix do! Au heut braucht\'r koi TV und dr Tatort darf ausfalla. Mir liefarat wieder die größte Songs aus Serien, Streaming-Highlights und Blockbuster. Für alle, wo am Freitig net dabei warat, gibt\'s heut Folge 2.',
           meta: ['Erlöserkirche Immenstadt']
