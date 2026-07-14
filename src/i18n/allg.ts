@@ -137,7 +137,7 @@ const allg = {
       tag: 'Kontakt',
       title: 'Frag? Idee? Luscht zum Mitmacha?',
       highlight: "Meld di bei üs.",
-      text: 'Du suchsch an Chor für Geburtstag, Hochzeit oder Scheidung? Oder host Luscht zum Mitsinga? Dann meld di gern. Aktuell suchat mir vor allem Männerstimme. Wenn du Freid am Singa host und scho a bissle Erfahrung mitbringst, bisch bei üs genau richtig!',
+      text: 'Du suchsch an Chor für Geburtstag, Hochzeit oder Scheidung? Dann meld di gern. Du witt mitsinga? Aktuell send mir guat bsetzt – Tenör kennat mir aber älleweil braucha! Sonscht freiat mir üs über Leit mit richtig viel Chor-Erfahrung, die sich d\'Nota fix selber aneignat. Wenn du Interesse host, schreib üs gern ausführlich ebbes über di und dei Chor-Erfahrung – nå kennat mir üs glei a Bild vo dir macha.',
       form: {
         name: 'Name *',
         namePlaceholder: 'Dei Name',
