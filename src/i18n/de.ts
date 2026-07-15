@@ -76,9 +76,9 @@ const de = {
     conductor: {
       tag: 'Hallo!',
       title: 'Das sind wir.',
-      p1: 'Ich bin Johannes, der Chorleiter von kalikoer. Musik begleitet mich seit vielen Jahren: als Korrepetitor am Klavier und an der Orgel, als Tenor mit langjähriger Ensemble-Erfahrung und immer wieder auch solistisch. Ich bilde mich laufend weiter – mit Gesangsunterricht und Workshops zur Chorarbeit, zuletzt intensiv im Bereich Pop-Chor.',
-      p1b: 'Ein Herzensthema ist mir die Stimmbildung im Chor. Dabei gebe ich nur weiter, was mich selbst spürbar weitergebracht hat – und weil ich selber im Chor stehe, weiß ich genau, wo’s manchmal hakt 😉.',
-      p2: 'Bei kalikoer steht genau das im Mittelpunkt: die Freude am Miteinandersingen. Und genau die verbindet uns. Bei uns treffen Lehrer auf Architekten, Physiotherapeutinnen auf Software-Entwickler, Marketingprofis auf Hüttenwirte – ein herrlich bunter Mix an Menschen. Was uns zusammenschweißt? Die Begeisterung für Musik. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die unsere Leidenschaft zur Musik teilen.',
+      p1: 'Ich bin Johannes, der Chorleiter von kalikoer. Musik begleitet mich seit vielen Jahren als Korrepetitor am Klavier und an der Orgel, als Tenor mit langjähriger Ensemble-Erfahrung und immer wieder auch solistisch. Ich bilde mich laufend weiter mit Gesangsunterricht und Workshops zur Chorarbeit, zuletzt intensiv im Bereich Pop-Chor.',
+      p1b: 'Ein Herzensthema ist mir die Stimmbildung im Chor. Dabei gebe ich nur weiter, was mich selbst spürbar weitergebracht hat Und weil ich selber im Chor stehe, weiß ich genau, wo’s manchmal hakt 😉.',
+      p2: 'Bei kalikoer steht vor allem die Freude am Miteinandersingen im Mittelpunkt. Und genau die verbindet uns. Bei uns treffen Lehrer auf Architekten, Physiotherapeutinnen auf Software-Entwickler, Marketingprofis auf Hüttenwirte – ein herrlich bunter Mix an Menschen. Was uns zusammenschweißt? Die Begeisterung für Musik. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die unsere Leidenschaft zur Musik teilen.',
       imageAlt: 'Johannes Golda, Chorleiter von kalikoer, einem jungen Chor aus Immenstadt im Allgäu.'
     },
     rehearsal: {
@@ -138,7 +138,7 @@ const de = {
     contact: {
       tag: 'Kontakt',
       title: 'Anfragen? Anregungen? Lust, mitzumachen?',
-      text: 'Du suchst einen Chor für deinen Geburtstag, deine Hochzeit oder deine Scheidung? Dann melde dich gerne. Du möchtest mitsingen? Aktuell sind wir gut besetzt – Tenöre sind aber immer willkommen! Darüber hinaus freuen wir uns über Sängerinnen und Sänger mit ausgeprägter Chorerfahrung, die sich Noten zügig selbstständig aneignen können. Wenn du Interesse hast, schreib uns gerne ausführlich etwas über dich und deine Chor-Erfahrung – so können wir uns gleich ein Bild von dir machen.',
+      text: 'Du suchst einen Chor für deinen Geburtstag, deine Hochzeit oder deine Scheidung? Dann melde dich gerne. Du möchtest mitsingen? Aktuell sind wir gut besetzt, Tenöre sind aber immer willkommen! Darüber hinaus freuen wir uns über Sängerinnen und Sänger mit ausgeprägter Chorerfahrung, die sich Noten zügig selbstständig aneignen können. Wenn du Interesse hast, schreib uns gerne ausführlich etwas über dich und deine Chor-Erfahrung – so können wir uns gleich ein Bild von dir machen.',
       form: {
         name: 'Name *',
         namePlaceholder: 'Dein Name',
