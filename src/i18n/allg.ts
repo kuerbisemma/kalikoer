@@ -76,7 +76,8 @@ const allg = {
     conductor: {
       tag: 'Mir san mir',
       title: 'Servus!',
-      p1: 'I bin dr Johannes, dr Chorleiter vo kalikoer. Musik begleitet mi scho seit viele Johr. I spiel verschiedene Instrument, vor allem Klavier und Orgel, und sing selber in mehrere Chör und Ensembles. I bin koi Profi, hab aber durch viel Praxis a guate Erfahrung sammelt 😊',
+      p1: 'I bin dr Johannes, dr Chorleiter vo kalikoer. Musik begleitet mi scho seit viele Johr: am Klavier und an dr Orgel als Korrepetitor, als Tenor in verschiedene Chör und Ensembles – und ab und zua au solistisch. I bild mi laufend weiter, mit Gesangsunterricht und Workshops zur Chorarbeit, zletzt intensiv im Bereich Pop-Chor.',
+      p1b: 'D’Stimmbildung im Chor liegt mir bsunders am Herza. I geb nur weiter, was mi selber spürbar weiterbrocht hot – und weil i selber im Chor steh, woiß i genau, wo’s manchmol hakt 😉.',
       p2: 'Bei kalikoer goht\'s mir vor allem um d\'Freid am gemeinsame Singa. Drum freu i mi über jede Sängerin und jeden Sänger, wo dia Leidenschaft mit üs teilt.',
       imageAlt: 'Johannes Golda – Chorleiter'
     },

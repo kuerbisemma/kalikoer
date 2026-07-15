@@ -76,7 +76,8 @@ const de = {
     conductor: {
       tag: 'Hallo!',
       title: 'Das sind wir.',
-      p1: 'Ich bin Johannes, der Chorleiter von kalikoer. Ich bin kein Profi – aber genau das macht’s vielleicht sympathisch 😉. Was ich mitbringe, ist jede Menge Erfahrung, Leidenschaft für Chormusik und vor allem richtig viel Herzblut für das gemeinsame Singen.',
+      p1: 'Ich bin Johannes, der Chorleiter von kalikoer. Musik begleitet mich seit vielen Jahren: als Korrepetitor am Klavier und an der Orgel, als Tenor mit langjähriger Ensemble-Erfahrung und immer wieder auch solistisch. Ich bilde mich laufend weiter – mit Gesangsunterricht und Workshops zur Chorarbeit, zuletzt intensiv im Bereich Pop-Chor.',
+      p1b: 'Ein Herzensthema ist mir die Stimmbildung im Chor. Dabei gebe ich nur weiter, was mich selbst spürbar weitergebracht hat – und weil ich selber im Chor stehe, weiß ich genau, wo’s manchmal hakt 😉.',
       p2: 'Bei kalikoer steht genau das im Mittelpunkt: die Freude am Miteinandersingen. Und genau die verbindet uns. Bei uns treffen Lehrer auf Architekten, Physiotherapeutinnen auf Software-Entwickler, Marketingprofis auf Hüttenwirte – ein herrlich bunter Mix an Menschen. Was uns zusammenschweißt? Die Begeisterung für Musik. Deshalb freue ich mich über alle Sänger bzw. Sängerinnen, die unsere Leidenschaft zur Musik teilen.',
       imageAlt: 'Johannes Golda, Chorleiter von kalikoer, einem jungen Chor aus Immenstadt im Allgäu.'
     },
