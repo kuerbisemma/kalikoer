@@ -109,6 +109,9 @@ const de = {
       tag: 'Live dabei',
       title: 'Termine & Auftritte.',
       posterAlt: 'Konzertplakat Kalikoer – Are you still listening?',
+      setlistLink: 'Setlist ansehen',
+      setlistAlt: 'Setlist des Konzerts „Are you still listening?“ von kalikoer',
+      setlistClose: 'Schließen',
       cards: [
         {
           date: '17. Juli 2026',

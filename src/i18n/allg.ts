@@ -111,6 +111,9 @@ const allg = {
       tag: 'Live dabei',
       title: 'Termine & Auftritte.',
       posterAlt: 'Konzertplakat – Are you still listening?',
+      setlistLink: 'Setlist aluaga',
+      setlistAlt: 'Setlist vom Konzert „Are you still listening?“ vo kalikoer',
+      setlistClose: 'Zuamacha',
       cards: [
         {
           date: '17. Juli 2026',
