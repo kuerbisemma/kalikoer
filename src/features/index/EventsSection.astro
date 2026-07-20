@@ -9,6 +9,12 @@ const { language = 'de' } = Astro.props;
 const t = getTranslations(language);
 const firstEvent = t.index.events.cards[0];
 const secondEvent = t.index.events.cards[1];
+const worshipEvent = {
+  date: '04. Juli 2026',
+  title: 'Salva me',
+  text: 'Anlässlich des 900-jährigen Jubiläums der St.Verena Kirche in Fischen gestalten wir den Gottesdienst musikalisch mit. Freut euch auf Musik von John Rutter, Marco Frisina oder Coldplay.',
+  location: 'St. Verena, Fischen'
+};
 ---
 
 <section id="termine">
@@ -16,6 +22,30 @@ const secondEvent = t.index.events.cards[1];
     <div class="events-header">
       <div class="section-tag">{t.index.events.tag}</div>
       <h2 class="section-heading">{t.index.events.title}</h2>
+    </div>
+
+    <div class="termine-stage">
+      <div class="poster-wrap">
+        <img src="/images/kalikoer_26.07_Gottesdienst Fischen.jpg" alt="Plakat Salva me in Fischen" />
+      </div>
+
+      <div class="events-stack">
+        <div class="event-card">
+          <div class="event-card-header">
+            <div class="event-date">{worshipEvent.date}</div>
+            <div class="event-title">{worshipEvent.title}</div>
+          </div>
+          <div class="event-body">
+            <p>{worshipEvent.text}</p>
+            <div class="event-meta">
+              <span>
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                {worshipEvent.location}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="termine-stage">

@@ -158,16 +158,10 @@ const de = {
         year: '2026',
         items: [
           {
-            date: '4. Juli 2026',
-            title: 'Salva me',
-            desc: 'Zum 900-jährigen Jubiläum der St.-Verena-Kirche in Fischen gestaltete kalikoer den Gottesdienst musikalisch mit. Auf dem Programm standen Werke von John Rutter, Marco Frisina und Coldplay.',
-            tag: 'Auftritt'
-          },
-          {
             date: '17. & 19. Juli 2026',
             title: 'Are you still listening?',
             desc: 'Im Juli 2026 singt kalikoer aus Immenstadt bekannte Titel aus Streaming, Serien und Filmklassiker. Zwei Abende voller Gänsehaut und großer Melodien – Folge 1 in Blaichach, Folge 2 in der Erlöserkirche Immenstadt.',
-            tag: 'Konzert'
+            
           }
         ]
       },
@@ -178,25 +172,24 @@ const de = {
             date: '6. Dezember 2025',
             title: 'Adventskonzert',
             desc: 'Weihnachtliche Klänge in der Kirche gab\'s zur Adventszeit im Rahmen der Orgelmatinee in der Kirche St. Michael in Immenstadt.',
-            tag: 'Auftritt'
           },
           {
             date: '13. Dezember 2025',
             title: 'Bühler Seeweihnacht',
             desc: 'Eiskalt aber wunderschön war\'s bei der Bühler Seeweihnacht in Immenstadt.',
-            tag: 'Auftritt'
+
           },
           {
             date: 'Herbst 2025',
             title: 'Spende an IG OMa e.V. und Allgäu Hospiz',
             desc: 'kalikoer spendet einen Teil der Konzerteinnahmen an die IG OMa e.V. und das Allgäu Hospiz – Musik, die Gutes tut.',
-            tag: 'Soziales Engagement'
+
           },
           {
             date: 'September 2025',
             title: 'Zwei Konzerte im September',
             desc: 'Mit unserem Konzert "Don`t stop me now" begeisterten wir in der IG Oma und in der Erlöserkirche Immenstadt. Zwei Abende voller Energie, Emotionen und unvergesslicher Melodien.',
-            tag: 'Konzert'
+
           }
         ]
       }
