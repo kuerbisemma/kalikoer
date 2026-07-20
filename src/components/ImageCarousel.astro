@@ -96,7 +96,6 @@ const { images, className = '' } = Astro.props;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
     cursor: pointer;
     transition: transform 0.2s;
   }
@@ -229,83 +228,52 @@ const { images, className = '' } = Astro.props;
   }
 
   @media (max-width: 768px) {
-    .carousel-container {
-      flex-direction: column;
-      gap: 0;
-    }
-
     .carousel-btn {
-      display: none;
+      width: 36px;
+      height: 36px;
     }
 
-    .carousel-indicators {
-      display: none;
+    .carousel-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .carousel-container {
+      gap: 12px;
     }
 
     .carousel-viewport {
-      aspect-ratio: auto;
-      height: auto;
-      overflow: visible;
-    }
-
-    .carousel-track {
-      display: grid;
-      grid-template-columns: 1fr;
-      height: auto;
-      transform: none !important;
-    }
-
-    .carousel-slide {
-      flex: unset;
-      width: 100%;
-      height: auto;
-      min-height: 250px;
-      aspect-ratio: 16/9;
-      margin-bottom: 16px;
-    }
-
-    .carousel-slide:last-child {
-      margin-bottom: 0;
+      aspect-ratio: 3/2;
     }
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const carousels = document.querySelectorAll<HTMLElement>('.image-carousel');
-    const desktopQuery = window.matchMedia('(min-width: 769px)');
+    const carousels = document.querySelectorAll('.image-carousel');
 
-    carousels.forEach((carousel: HTMLElement) => {
-      const track = carousel.querySelector('.carousel-track') as HTMLElement | null;
-      const slides = carousel.querySelectorAll('.carousel-slide') as NodeListOf<HTMLImageElement>;
-      const indicators = carousel.querySelectorAll('.indicator') as NodeListOf<HTMLButtonElement>;
-      const prevBtn = carousel.querySelector('.carousel-btn.prev') as HTMLButtonElement | null;
-      const nextBtn = carousel.querySelector('.carousel-btn.next') as HTMLButtonElement | null;
-      const lightbox = carousel.nextElementSibling instanceof HTMLElement ? carousel.nextElementSibling : null;
-      const lightboxImage = lightbox?.querySelector('.lightbox-image') as HTMLImageElement | null | undefined;
-      const lightboxCurrent = lightbox?.querySelector('.lightbox-current') as HTMLElement | null | undefined;
-      const lightboxClose = lightbox?.querySelector('.lightbox-close') as HTMLButtonElement | null | undefined;
+    carousels.forEach((carousel) => {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const indicators = carousel.querySelectorAll('.indicator');
+      const prevBtn = carousel.querySelector('.carousel-btn.prev');
+      const nextBtn = carousel.querySelector('.carousel-btn.next');
+      const lightbox = carousel.nextElementSibling;
+      const lightboxImage = lightbox?.querySelector('.lightbox-image');
+      const lightboxCurrent = lightbox?.querySelector('.lightbox-current');
+      const lightboxClose = lightbox?.querySelector('.lightbox-close');
 
       let currentIndex = 0;
-      const isDesktop = () => desktopQuery.matches;
 
       const updateCarousel = () => {
-        if (!track) return;
-
-        if (!isDesktop()) {
-          track.style.transform = 'none';
-          return;
-        }
-
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
         
-        indicators.forEach((indicator: HTMLButtonElement, index: number) => {
+        indicators.forEach((indicator, index) => {
           indicator.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
         });
       };
 
-      const goToSlide = (index: number) => {
-        if (!isDesktop()) return;
+      const goToSlide = (index) => {
         currentIndex = (index + slides.length) % slides.length;
         updateCarousel();
       };
@@ -313,30 +281,20 @@ const { images, className = '' } = Astro.props;
       prevBtn?.addEventListener('click', () => goToSlide(currentIndex - 1));
       nextBtn?.addEventListener('click', () => goToSlide(currentIndex + 1));
 
-      indicators.forEach((indicator: HTMLButtonElement) => {
+      indicators.forEach((indicator) => {
         indicator.addEventListener('click', () => {
-          goToSlide(parseInt(indicator.dataset.index ?? '0', 10));
+          goToSlide(parseInt(indicator.dataset.index));
         });
       });
-
-      const handleBreakpointChange = () => {
-        updateCarousel();
-      };
-
-      if (desktopQuery.addEventListener) {
-        desktopQuery.addEventListener('change', handleBreakpointChange);
-      } else {
-        desktopQuery.addListener(handleBreakpointChange);
-      }
 
       // Lightbox
       slides.forEach((slide, index) => {
         slide.addEventListener('click', () => {
-          if (lightbox && lightboxImage && lightboxCurrent) {
+          if (lightbox && lightboxImage) {
             currentIndex = index;
             lightboxImage.src = slide.src;
             lightboxImage.alt = slide.alt;
-            lightboxCurrent.textContent = String(index + 1);
+            lightboxCurrent.textContent = index + 1;
             lightbox.classList.add('active');
             lightbox.setAttribute('aria-hidden', 'false');
           }
@@ -344,10 +302,8 @@ const { images, className = '' } = Astro.props;
       });
 
       lightboxClose?.addEventListener('click', () => {
-        if (!lightbox) return;
-        const lb = lightbox;
-        lb.classList.remove('active');
-        lb.setAttribute('aria-hidden', 'true');
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
       });
 
       lightbox?.addEventListener('click', (e) => {
@@ -366,8 +322,6 @@ const { images, className = '' } = Astro.props;
           lightbox.setAttribute('aria-hidden', 'true');
         }
       });
-
-      updateCarousel();
     });
   });
 </script>
