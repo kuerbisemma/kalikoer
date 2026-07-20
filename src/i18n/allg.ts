@@ -161,6 +161,12 @@ const allg = {
         year: '2026',
         items: [
           {
+            date: '4. Juli 2026',
+            title: 'Salva me',
+            desc: 'Zum 900-jährigen Jubiläum vo dr St.-Verena-Kirche in Fischen hot kalikoer dr Gottesdienst musikalisch mitgestaltet. Dabei sind Werke vo John Rutter, Marco Frisina und Coldplay erklunga.',
+            tag: 'Auftritt'
+          },
+          {
             date: '17. & 19. Juli 2026',
             title: 'Are you still listening?',
             desc: 'Im Juli 2026 singt dr junge Chor kalikoer aus Immenstadt bekannte Titel aus Streaming, Serien und Filmklassiker. Zwei Obede voller Gänsehaut und großer Melodie – Folge 1 in Blaichach, Folge 2 in dr Erlöserkirche Immenstadt.',
