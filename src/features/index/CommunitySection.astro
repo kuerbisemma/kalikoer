@@ -61,7 +61,10 @@ const communityImages = [
     .community-grid { grid-template-columns: 1fr; }
     .community-text { order: 1; }
     .community-img { order: 2; }
-    .community-img { aspect-ratio: 16/9; }
+    .community-img {
+      aspect-ratio: auto;
+      overflow: visible;
+    }
 
     .community-img {
       width: calc(100% + 48px);

@@ -136,6 +136,11 @@ const heroImages = [
 
   @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .hero-img { display: none;}
+    .hero-img {
+      display: block;
+      aspect-ratio: auto;
+      overflow: visible;
+      border-radius: 0;
+    }
   }
 </style>
