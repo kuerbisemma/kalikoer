@@ -62,10 +62,10 @@ const allg = {
   },
   index: {
     hero: {
-      tag: 'Chor im Allgäu',
-      title: 'Chor in Immenstadt im Allgäu',
-      p1: 'Mit viel Herzbluat und Freid am Miteinandersinga bringt kalikoer junge Stimm aus em Allgäu zamma zu am bsondra Klangerlebnis. Unser Chor mit engagierte Sängerinna und Sänger verbindet moderne Chormusik mit ehrlicher Gemeinschaft.',
-      p2: 'Egal ob ruhige Ballada, flotte Pop-Hits oder traditionelle Stückle – bei üs trifft Vielfalt auf pure Begeisterung.',
+      tag: 'kalikoer',
+      title: 'Chor im Allgäu',
+      p1: 'Kalikoer isch a moderner, junger Chor in Immenstadt im Allgäu. Mit viel Herzbluat und echter Freid am gemeinsame Singa bringat mir junge Stimm aus em Allgäu, Kempten und Sonthofen zamma und schaffat so a einzigartigs Klangerlebnis.',
+      p2: 'Ob gfühlvolle Ballada, schwunvolle Pop-Hits oder klassische Stückle – unser Chor stoht für musikalische Vielfalt und pure Begeisterung. Unsere engagierta Sängerinna und Sänger mit am Altersdurchschnitt vo ca. 35 Johra teilat neba dr Liab zur Musik au d\'Freid an Gemeinschaft und gemeinsame Auftritte.',
       supportText: 'Wenn dir unsere Musik gefällt, unterstütze uns und',
       supportLink: 'Buy me a coffee',
       supportAria: 'kalikoer auf Buy me a coffee unterstütza',
@@ -74,20 +74,18 @@ const allg = {
       imageAlt: 'kalikoer – Chor in Immenstadt im Allgäu'
     },
     conductor: {
-      tag: 'Mir san mir',
-      title: 'Servus!',
-      p1: 'I bin dr Johannes, dr Chorleiter vo kalikoer. Musik begleitet mi scho seit viele Johr. I spiel verschiedene Instrument, vor allem Klavier und Orgel, und sing selber in mehrere Chör und Ensembles. I bin koi Profi, hab aber durch viel Praxis a guate Erfahrung sammelt 😊',
-      p2: 'Bei kalikoer goht\'s mir vor allem um d\'Freid am gemeinsame Singa. Drum freu i mi über jede Sängerin und jeden Sänger, wo dia Leidenschaft mit üs teilt.',
-      imageAlt: 'Johannes Golda – Chorleiter'
+      tag: 'Hallo!',
+      title: 'Des san mir.',
+      p1: 'I bin dr Johannes, dr Chorleiter vo kalikoer. I bin koi Profi – aber genau des macht\'s vielleicht sympathisch 😉. Was i mitbring, isch jede Meng Erfahrung, Leidenschaft für Chormusik und vor allem richtig viel Herzbluat für des gemeinsame Singa.',
+      p2: 'Bei kalikoer stoht genau des im Mittelpunkt: d\'Freid am Miteinandersinga. Und genau die verbindet üs. Bei üs treffat Lehrer auf Architekten, Physiotherapeutinna auf Software-Entwickler, Marketingprofis auf Hüttenwirte – a herrlich bunter Mix an Leid. Was üs zusammenschwäißt? D\'Begeisterung für Musik. Drum freu i mi über alle Sänger bzw. Sängerinna, wo ünseri Leidenschaft zur Musik tailat.',
+      imageAlt: 'Johannes Golda, Chorleiter vo kalikoer, a junger Chor aus Immenstadt im Allgäu.'
     },
     rehearsal: {
-      tag: 'Mitsinga',
-      title: 'Prob.',
-      intro1: 'Mit viel positiver Energie, Freid und Gemeinschaft:',
-      intro2: 'Unsere Prob isch immer am Dienschtig um 19:10 Uhr.',
-      intro3: 'Mir schaffat an verschiedene Stück und bereitat üs auf zwei bis drei Konzerte im Johr vor.',
-      imageAlt: 'Kalikoer Konzert 2025',
-      cardTitle: 'Unsere Chorprob',
+      tag: 'Prob',
+      title: 'Chor zum Mitsinga.',
+      intro1: 'Ünseri Chorprob isch meh wie bloß Üba. Geprägt vo positiver Energi, Freid und Gemeinschaft isch sie ünseri wöchentlich Energi-Booster. Mit Spaß schaffat mir a verschiedene Stück und bereitad üs auf zwei bis drei Konzerte im Johr vor.',
+      imageAlt: 'Kalikoer beim Probentag im März 2026',
+      cardTitle: 'Ünseri Chorprob',
       cardTime: 'Dienschtig · 19:10 Uhr',
       points: ['Kalvarienbergstraße 27, 87509 Immenstadt', 'Stimmbildung', 'Kostenlose Übe-Tracks für d\'Vor- und Nachbereitung'],
       cta: 'Jetzt mol reinschnuppera'
@@ -109,19 +107,13 @@ const allg = {
     events: {
       tag: 'Live dabei',
       title: 'Termine & Auftritte.',
-      posterAlt: 'Konzertplakat – Are you still listening?',
+      posterAlt: 'Konzertplakat',
       cards: [
         {
-          date: '17. Juli 2026',
-          title: 'Are you still listening? – Folge 1',
-          text: 'Wer kennt\'s it: „Nur no a Folge..nur no kurz weiterschaua.."?! Amazon, Netflix und Co. braucht\'r an dem Obed it. Mir bringat die größte Songs aus Serien, Streaming-Highlights und Blockbuster live auf d\'Bühne. A Konzert wie dr perfekte Serienobed: mol laut, mol leise, mol episch. Popcorn gibt\'s keins, aber Gänsehaut, viel Freid und Melodie, wo no lang nachklingat.',
-          meta: ['Sonthofener Str. 41, 87544 Blaichach', 'Parkplatz am Bahnhof (Immenstädter Str. 6) oder Weidachstraße']
-        },
-        {
-          date: '19. Juli 2026',
-          title: 'Are you still listening? – Folge 2',
-          text: 'Ihr händ denkt, oine Folge reicht? Nix do! Au heut braucht\'r koi TV und dr Tatort darf ausfalla. Mir liefarat wieder die größte Songs aus Serien, Streaming-Highlights und Blockbuster. Für alle, wo am Freitig net dabei warat, gibt\'s heut Folge 2.',
-          meta: ['Erlöserkirche Immenstadt']
+          date: '12. Dezember 2026',
+          title: 'Shine little light',
+          text: 'Adventsfeeling pur. Mir bringat weihnachtlich Klängel in d\'Kirche Maria Heimsuchung.',
+          meta: ['Kirche Maria Heimsuchung Sonthofen']
         }
       ]
     },
@@ -154,7 +146,7 @@ const allg = {
     hero: {
       tag: 'Rückblick',
       title: 'Archiv.',
-      text: 'Alle vergangene und kommende Auftritte, Konzerte und Aktionen vo kalikoer im Überblick.'
+      text: 'Alle Auftritte, Konzerte und Aktiona vo kalikoer im Überblick.'
     },
     years: [
       {
@@ -215,16 +207,16 @@ const allg = {
     hero: {
       tag: 'Netzwerk',
       title: 'Partner.',
-      text: 'Unsere Partner im Überblick.'
+      text: 'Ünseri Partner im Überblick: Danke an alle, wo üs unterstützat und drbei helpat, kulturelle Vielfalt z\'leba und unvergesslich Veranstaltunge möglich z\'macha.'
     },
     cards: [
       {
         title: 'IG OMa e.V.',
-        desc: 'Platzhaltertext: Do stoht bald a kurze Beschreibung vo unserem Partner.'
+        desc: 'D\'IG Oma isch a Interessensgemeinschaft zur Förderung vo dr dörflich Entwicklung in Oberdorf und Martinszell. Darüber hinaus bietet d\'IG Oma Raum für vielfältig kulturelle Veranstaltunge. Au mir hatta scho d\'Gelegenheit, dort z\'singa und Teil vo dösem bsondere Ort z\'sein, wo Kreativität und Begegnung fördert.'
       },
       {
         title: 'Erlöserkirche Immenstadt',
-        desc: 'Platzhaltertext: Do stoht bald a kurze Beschreibung vo unserem Partner.'
+        desc: 'In dr Erlöserkirche Immenstadt durftat mir im Summer 2025 vor am wunderbara Publikum auftraita. D\'Kirche bietet net bloß a großartig Akustik, sondern au a herzlich Atmosphär, wo ünseri Musik perfekt ergänzt. Mir freuet üs auf witer gemeinsam Projekt und Konzerte in disem bsondere Raum.'
       }
     ]
   },

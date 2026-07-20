@@ -1,5 +1,6 @@
 ---
 import { getTranslations, type Language } from '../../i18n';
+import ImageCarousel from '../../components/ImageCarousel.astro';
 
 interface Props {
   language?: Language;
@@ -7,6 +8,13 @@ interface Props {
 
 const { language = 'de' } = Astro.props;
 const t = getTranslations(language);
+
+const communityImages = [
+  { src: '/images/kalikoer_gemeinschaft_2026-06-13.JPEG', alt: 'kalikoer Gemeinschaft' },
+  { src: '/images/kalikoer_gemeinschaft_2026-07.JPEG', alt: 'kalikoer Gemeinschaft' },
+  { src: '/images/kalikoer_gemeinschaft_2025-09.jpg', alt: 'kalikoer Gemeinschaft' },
+  { src: '/images/kalikoer_gemeinschaft.jpg', alt: 'kalikoer Gemeinschaft' }
+];
 ---
 
 <section id="gemeinsam">
@@ -20,7 +28,7 @@ const t = getTranslations(language);
         <p>{t.index.community.p3}</p>
       </div>
       <div class="community-img">
-        <img src="/images/kalikoer_gemeinsam.jpg" alt={t.index.community.imageAlt} />
+        <ImageCarousel images={communityImages} />
       </div>
     </div>
   </div>

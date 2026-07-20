@@ -1,0 +1,327 @@
+---
+interface Props {
+  images: Array<{ src: string; alt: string }>;
+  className?: string;
+}
+
+const { images, className = '' } = Astro.props;
+---
+
+<div class={`image-carousel ${className}`}>
+  <div class="carousel-container">
+    <button class="carousel-btn prev" aria-label="Vorheriges Bild">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    
+    <div class="carousel-viewport">
+      <div class="carousel-track">
+        {images.map((image, index) => (
+          <img 
+            class="carousel-slide"
+            src={image.src} 
+            alt={image.alt}
+            data-index={index}
+            loading={index === 0 ? "eager" : "lazy"}
+          />
+        ))}
+      </div>
+    </div>
+    
+    <button class="carousel-btn next" aria-label="Nächstes Bild">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+  
+  <div class="carousel-indicators">
+    {images.map((_, index) => (
+      <button
+        class="indicator"
+        data-index={index}
+        aria-label={`Bild ${index + 1} von ${images.length}`}
+        aria-current={index === 0 ? "true" : "false"}
+      ></button>
+    ))}
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" aria-hidden="true">
+  <div class="lightbox-content">
+    <button class="lightbox-close" aria-label="Schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <img class="lightbox-image" src="" alt="" />
+    <div class="lightbox-counter">
+      <span class="lightbox-current">1</span> / <span class="lightbox-total">{images.length}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .image-carousel {
+    width: 100%;
+  }
+
+  .carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+
+  .carousel-viewport {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 4/3;
+    background: #f0f0f0;
+  }
+
+  .carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .carousel-slide:hover {
+    transform: scale(1.02);
+  }
+
+  .carousel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+    z-index: 10;
+  }
+
+  .carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .carousel-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    padding: 0;
+  }
+
+  .indicator[aria-current="true"] {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .indicator:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: background-color 0.2s;
+  }
+
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .lightbox-close svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .lightbox-counter {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-btn {
+      width: 36px;
+      height: 36px;
+    }
+
+    .carousel-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .carousel-container {
+      gap: 12px;
+    }
+
+    .carousel-viewport {
+      aspect-ratio: 3/2;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.image-carousel');
+
+    carousels.forEach((carousel) => {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const indicators = carousel.querySelectorAll('.indicator');
+      const prevBtn = carousel.querySelector('.carousel-btn.prev');
+      const nextBtn = carousel.querySelector('.carousel-btn.next');
+      const lightbox = carousel.nextElementSibling;
+      const lightboxImage = lightbox?.querySelector('.lightbox-image');
+      const lightboxCurrent = lightbox?.querySelector('.lightbox-current');
+      const lightboxClose = lightbox?.querySelector('.lightbox-close');
+
+      let currentIndex = 0;
+
+      const updateCarousel = () => {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        indicators.forEach((indicator, index) => {
+          indicator.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
+        });
+      };
+
+      const goToSlide = (index) => {
+        currentIndex = (index + slides.length) % slides.length;
+        updateCarousel();
+      };
+
+      prevBtn?.addEventListener('click', () => goToSlide(currentIndex - 1));
+      nextBtn?.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+      indicators.forEach((indicator) => {
+        indicator.addEventListener('click', () => {
+          goToSlide(parseInt(indicator.dataset.index));
+        });
+      });
+
+      // Lightbox
+      slides.forEach((slide, index) => {
+        slide.addEventListener('click', () => {
+          if (lightbox && lightboxImage) {
+            currentIndex = index;
+            lightboxImage.src = slide.src;
+            lightboxImage.alt = slide.alt;
+            lightboxCurrent.textContent = index + 1;
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+          }
+        });
+      });
+
+      lightboxClose?.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+      });
+
+      lightbox?.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('active');
+          lightbox.setAttribute('aria-hidden', 'true');
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox?.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+          lightbox.classList.remove('active');
+          lightbox.setAttribute('aria-hidden', 'true');
+        }
+      });
+    });
+  });
+</script>

@@ -1,5 +1,6 @@
 ---
 import { getTranslations, type Language } from '../../i18n';
+import ImageCarousel from '../../components/ImageCarousel.astro';
 
 interface Props {
   language?: Language;
@@ -7,6 +8,13 @@ interface Props {
 
 const { language = 'de' } = Astro.props;
 const t = getTranslations(language);
+
+const heroImages = [
+  { src: '/images/kalikoer_konzert_2026-07-19_immenstadt (3).jpeg', alt: 'kalikoer Konzert Immenstadt' },
+  { src: '/images/kalikoer_konzert_2026-07-19_immenstadt (1).jpeg', alt: 'kalikoer Konzert Immenstadt' },
+  { src: '/images/kalikoer_konzert_2026-07-17_blaichach (1).jpg', alt: 'kalikoer Konzert Blaichach' },
+  { src: '/images/kalikoer_konzert_Gottesdienst_2026-07-04_Fischen.jpg', alt: 'kalikoer Gottesdienst Fischen' }
+];
 ---
 
 <section class="hero" id="home">
@@ -33,7 +41,7 @@ const t = getTranslations(language);
       </div>
     </div>
     <div class="hero-img">
-      <img src="/images/kalikoer_konzert_2025-09.jpg" alt={t.index.hero.imageAlt} />
+      <ImageCarousel images={heroImages} />
     </div>
   </div>
 </section>
