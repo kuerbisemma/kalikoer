@@ -3,14 +3,15 @@ import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import Lightbox from '../components/Lightbox.astro';
 import { getTranslations, type Language } from '../i18n';
 
 interface Props {
   title: string;
-  bodyClass: 'page-index' | 'page-archiv' | 'page-partner' | 'page-impressum' | 'page-datenschutz';
-  activePage?: 'home' | 'archiv' | 'partner' | 'impressum' | 'datenschutz';
+  bodyClass: 'page-index' | 'page-archiv' | 'page-galerie' | 'page-partner' | 'page-impressum' | 'page-datenschutz';
+  activePage?: 'home' | 'archiv' | 'galerie' | 'partner' | 'impressum' | 'datenschutz';
   language?: Language;
-  languageBasePath?: '/' | '/archiv' | '/partner' | '/impressum' | '/Datenschutz';
+  languageBasePath?: '/' | '/archiv' | '/galerie' | '/partner' | '/impressum' | '/Datenschutz';
   contactHref?: string;
   description?: string;
   canonicalPath?: string;
@@ -106,6 +107,7 @@ const allgPath = languageBasePath === '/' ? '/allg.html' : `/allg${languageBaseP
     <slot />
     <Footer language={language} />
     <CookieBanner language={language} />
+    <Lightbox />
 
     <script is:inline>
       function toggleMenu() {

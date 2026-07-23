@@ -13,6 +13,7 @@ const de = {
     rehearsal: 'Probe',
     audio: 'Hörproben',
     events: 'Termine',
+    gallery: 'Galerie',
     partner: 'Partner',
     archive: 'Archiv',
     contact: 'Kontakt'
@@ -25,6 +26,7 @@ const de = {
     about: 'Das sind wir',
     rehearsal: 'Probe',
     events: 'Termine',
+    gallery: 'Galerie',
     partner: 'Partner',
     archive: 'Archiv',
     dataProtection: 'Datenschutz',
@@ -58,6 +60,10 @@ const de = {
     datenschutz: {
       title: 'Datenschutz – kalikoer',
       description: 'Datenschutzerklärung von kalikoer, ein moderner Chor aus Immenstadt im Allgäu.'
+    },
+    galerie: {
+      title: 'Galerie – kalikoer Chor in Immenstadt',
+      description: 'Galerie von kalikoer: Bilder von Konzerten, Auftritten und gemeinsamen Momenten des Chors.'
     }
   },
   index: {

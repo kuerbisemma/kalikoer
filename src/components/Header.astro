@@ -2,13 +2,14 @@
 import { getTranslations, type Language } from '../i18n';
 
 interface Props {
-  activePage?: 'home' | 'archiv' | 'partner' | 'impressum' | 'datenschutz';
+  activePage?: 'home' | 'archiv' | 'galerie' | 'partner' | 'impressum' | 'datenschutz';
   language?: Language;
 }
 
 const { activePage = 'home', language = 'de' } = Astro.props;
 const t = getTranslations(language);
 const homeHref = language === 'allg' ? '/allg.html' : '/index.html';
+const galeryHref = language === 'allg' ? '/allg/galerie.html' : '/galerie.html';
 const partnerHref = language === 'allg' ? '/allg/partner.html' : '/partner.html';
 const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
 ---
@@ -23,6 +24,7 @@ const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
       <li><a href={`${homeHref}#probe`}>{t.header.rehearsal}</a></li>
       <li><a href={`${homeHref}#audio-beispiele`}>{t.header.audio}</a></li>
       <li><a href={`${homeHref}#termine`}>{t.header.events}</a></li>
+      <li><a href={galeryHref} class={activePage === 'galerie' ? 'active' : undefined}>{t.header.gallery}</a></li>
       <li><a href={partnerHref} class={activePage === 'partner' ? 'active' : undefined}>{t.header.partner}</a></li>
       <li><a href={archiveHref} class={activePage === 'archiv' ? 'active' : undefined}>{t.header.archive}</a></li>
       <li><a href={`${homeHref}#kontakt`}>{t.header.contact}</a></li>
@@ -36,6 +38,7 @@ const archiveHref = language === 'allg' ? '/allg/archiv.html' : '/archiv.html';
     <a href={`${homeHref}#probe`} onclick="toggleMenu()">{t.header.rehearsal}</a>
     <a href={`${homeHref}#audio-beispiele`} onclick="toggleMenu()">{t.header.audio}</a>
     <a href={`${homeHref}#termine`} onclick="toggleMenu()">{t.header.events}</a>
+    <a href={galeryHref} onclick="toggleMenu()">{t.header.gallery}</a>
     <a href={partnerHref} onclick="toggleMenu()">{t.header.partner}</a>
     <a href={archiveHref} onclick="toggleMenu()">{t.header.archive}</a>
     <a href={`${homeHref}#kontakt`} onclick="toggleMenu()">{t.header.contact}</a>

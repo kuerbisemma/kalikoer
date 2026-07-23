@@ -13,6 +13,7 @@ const allg = {
     rehearsal: 'Prob',
     audio: 'Hörproba',
     events: 'Termine',
+    gallery: 'Galerie',
     partner: 'Partner',
     archive: 'Archiv',
     contact: 'Kontakt'
@@ -25,6 +26,7 @@ const allg = {
     about: 'Mir san mir',
     rehearsal: 'Prob',
     events: 'Termine',
+    gallery: 'Galerie',
     partner: 'Partner',
     archive: 'Archiv',
     dataProtection: 'Datenschutz',
@@ -58,6 +60,10 @@ const allg = {
     datenschutz: {
       title: 'Datenschutz – kalikoer',
       description: 'Datenschutzerklärung vo kalikoer, Chor in Immenstadt im Allgäu.'
+    },
+    galerie: {
+      title: 'Galerie – kalikoer Chor in Immenstadt',
+      description: 'Galerie vo kalikoer: Bilder vo Konzerte, Auftritte und gemeinsame Momenten des Chors.'
     }
   },
   index: {

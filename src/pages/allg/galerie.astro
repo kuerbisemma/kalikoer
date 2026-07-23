@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../features/galerie/HeroSection.astro';
+import GalerySection from '../../features/galerie/GalerySection.astro';
+import { getTranslations } from '../../i18n';
+
+const language = 'allg' as const;
+const t = getTranslations(language);
+---
+
+<BaseLayout
+  title="Galerie – kalikoer Chor in Immenstadt"
+  description="Galerie vo kalikoer: Fotos vo Konzerte, Auftritte und gemeinsame Moment vum Chor."
+  canonicalPath="/allg/galerie"
+  languageBasePath="/galerie"
+  language={language}
+  bodyClass="page-galerie"
+  activePage="galerie"
+  contactHref="allg.html#kontakt"
+>
+  <HeroSection language={language} />
+  <GalerySection language={language} />
+</BaseLayout>
