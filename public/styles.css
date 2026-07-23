@@ -115,6 +115,7 @@ body {
 /* ===== Typography sync with kalikoer.com ===== */
 body.page-index,
 body.page-archiv,
+body.page-galerie,
 body.page-partner,
 body.page-impressum {
   font-family: 'Rosario', sans-serif;
