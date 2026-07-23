@@ -108,19 +108,12 @@ const de = {
     events: {
       tag: 'Live dabei',
       title: 'Termine & Auftritte.',
-      posterAlt: 'Konzertplakat Kalikoer – Are you still listening?',
       cards: [
         {
-          date: '17. Juli 2026',
-          title: 'Are you still listening? – Folge 1',
-          text: 'Wer kennt es nicht: „Nur noch eine Folge..nur noch kurz weiterschauen.."?! Amazon, Netflix und Co. braucht ihr an diesem Abend nicht. Wir bringen die größten Songs aus Serien, Streaming-Highlights und Blockbustern live auf die Bühne. Ein Konzert wie ein perfekter Serienabend: mal laut, mal leise, mal episch. Popcorn gibt\'s kein, aber dafür Gänsehaut, ganz viel Freude und Melodien, die noch lange nachklingen. Ein Live-Stream für eure Ohren!',
-          meta: ['Sonthofener Str. 41, 87544 Blaichach', 'Parkplatz am Bahnhof (Immenstädter Str. 6) oder Weidachstraße']
-        },
-        {
-          date: '19. Juli 2026',
-          title: 'Are you still listening? – Folge 2',
-          text: 'Ihr dachtet, eine Folge reicht? Pustekuchen! Auch heute Abend braucht ihr kein TV und der Tatort darf heute auch ausfallen. Wir liefern erneut die größten Songs aus Serien, Streaming-Highlights und Blockbustern. Für alle, die uns am Freitag nicht hören konnten, gibt\'s heute Folge 2 unseres Konzerts.',
-          meta: ['Erlöserkirche Immenstadt']
+          date: '17. Dezember 2026 · 19:30 Uhr',
+          title: 'Shine little light',
+          text: 'Chor-Konzert zum Advent. Informationen folgen.',
+          meta: ['Kirche Maria Heimsuchung, Sonthofen']
         }
       ]
     },
