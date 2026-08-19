@@ -118,7 +118,7 @@ const allg = {
       title: 'Termine & Auftritte.',
       cards: [
         {
-          date: '17. Dezember 2026 · 19:30 Uhr',
+          date: '12. Dezember 2026 · 19:30 Uhr',
           title: 'Shine little light',
           text: 'Chor-Konzert zum Advent. Informationa folgat.',
           meta: ['Kirche Maria Heimsuchung, Sonthofen']
