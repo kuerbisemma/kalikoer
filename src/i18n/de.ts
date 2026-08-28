@@ -93,7 +93,7 @@ const de = {
       intro1: 'Unsere Chorprobe ist mehr als nur Üben. Geprägt von positiver Energie, Freude und Gemeinschaft ist sie unser wöchentlicher Energie-Booster. Mit Spaß arbeiten wir an diversen Stücken und bereiten uns auf zwei bis drei Konzerte im Jahr vor.',
       imageAlt: 'Kalikoer beim Probentag im März 2026',
       cardTitle: 'Unsere Chorprobe',
-      cardTime: 'Dienstags · 19:10 Uhr',
+      cardTime: 'Dienstags · 19:15 Uhr',
       points: ['Kalvarienbergstraße 27, 87509 Immenstadt', 'Stimmbildung', 'Kostenlose Übungstracks zur Vor- und Nachbereitung'],
       cta: 'Jetzt reinschnuppern'
     },

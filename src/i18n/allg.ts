@@ -91,11 +91,11 @@ const allg = {
       tag: 'Mitsinga',
       title: 'Prob.',
       intro1: 'Mit viel positiver Energie, Freid und Gemeinschaft:',
-      intro2: 'Unsere Prob isch immer am Dienschtig um 19:10 Uhr.',
+      intro2: 'Unsere Prob isch immer am Dienschtig um 19:15 Uhr.',
       intro3: 'Mir schaffat an verschiedene Stück und bereitat üs auf zwei bis drei Konzerte im Johr vor.',
       imageAlt: 'Kalikoer Konzert 2025',
       cardTitle: 'Unsere Chorprob',
-      cardTime: 'Dienschtig · 19:10 Uhr',
+      cardTime: 'Dienschtig · 19:15 Uhr',
       points: ['Kalvarienbergstraße 27, 87509 Immenstadt', 'Stimmbildung', 'Kostenlose Übe-Tracks für d\'Vor- und Nachbereitung'],
       cta: 'Jetzt mol reinschnuppera'
     },
