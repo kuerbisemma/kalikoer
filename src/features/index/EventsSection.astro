@@ -20,6 +20,11 @@ const firstEvent = t.index.events.cards[0];
     <div class="termine-stage">
       <div class="events-stack">
         <div class="event-card">
+          {firstEvent.image && (
+            <div class="event-image">
+              <img src={firstEvent.image} alt={firstEvent.imageAlt} class="lightbox-trigger" />
+            </div>
+          )}
           <div class="event-card-header">
             <div class="event-date">{firstEvent.date}</div>
             <div class="event-title">{firstEvent.title}</div>
@@ -85,6 +90,20 @@ const firstEvent = t.index.events.cards[0];
     background: rgba(255,255,255,.09);
     border-color: rgba(39,93,111,.6);
     transform: translateX(6px);
+  }
+
+  .event-image {
+    aspect-ratio: 3/4;
+    max-height: 480px;
+    overflow: hidden;
+  }
+
+  .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
   }
 
   .event-card-header {
