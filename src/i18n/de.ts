@@ -119,7 +119,9 @@ const de = {
           date: '12. Dezember 2026 · 19:30 Uhr',
           title: 'Shine little light',
           text: 'Chor-Konzert zum Advent. Informationen folgen.',
-          meta: ['Kirche Maria Heimsuchung, Sonthofen']
+          meta: ['Kirche Maria Heimsuchung, Sonthofen'],
+          image: '/images/kalikoer_Konzert_2026-12-12_Shine-little-light.jpg',
+          imageAlt: 'Plakat zum Chorkonzert "Shine little light" am 12. Dezember 2026 in der Kirche Maria Heimsuchung, Sonthofen'
         }
       ]
     },
