@@ -1,6 +1,6 @@
 # kalikoer
 
-Astro-basierte Version der Website mit Komponenten-Architektur und statischem Output für GitHub Pages.
+Astro-basierte Version der Website mit Komponenten-Architektur und statischem Output für GitHub Pages
 
 ## Entwicklung
 
