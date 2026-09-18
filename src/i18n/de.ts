@@ -137,8 +137,8 @@ const de = {
     },
     contact: {
       tag: 'Kontakt',
-      title: 'Anfragen? Anregungen? Lust, mitzumachen?',
-      text: 'Du suchst einen Chor für deinen Geburtstag, deine Hochzeit oder deine Scheidung? Dann melde dich gerne. Du möchtest mitsingen? Aktuell sind wir gut besetzt, Tenöre sind aber immer willkommen! Darüber hinaus freuen wir uns über Sängerinnen und Sänger mit ausgeprägter Chorerfahrung, die sich Noten zügig selbstständig aneignen können. Wenn du Interesse hast, schreib uns gerne ausführlich etwas über dich und deine Chor-Erfahrung – so können wir uns gleich ein Bild von dir machen.',
+      title: 'Lust, mitzumachen?',
+      text: 'Du suchst einen Chor für deinen Geburtstag, deine Hochzeit oder deine Scheidung? Dann melde dich gerne. Du möchtest mitsingen? Aktuell suchen wir gezielt Tenöre und Bässe. Darüber hinaus freuen wir uns über Sängerinnen und Sänger mit ausgeprägter Chorerfahrung, die sich Noten zügig selbstständig aneignen können. Wenn du Interesse hast, schreib uns gerne ausführlich etwas über dich und deine Chor-Erfahrung – so können wir uns gleich ein Bild von dir machen.',
       form: {
         name: 'Name *',
         namePlaceholder: 'Dein Name',

@@ -135,9 +135,9 @@ const allg = {
     },
     contact: {
       tag: 'Kontakt',
-      title: 'Frag? Idee? Luscht zum Mitmacha?',
+      title: 'Luscht zum Mitmacha?',
       highlight: "Meld di bei üs.",
-      text: 'Du suchsch an Chor für Geburtstag, Hochzeit oder Scheidung? Dann meld di gern. Du witt mitsinga? Aktuell send mir guat bsetzt – Tenör kennat mir aber älleweil braucha! Sonscht freiat mir üs über Leit mit richtig viel Chor-Erfahrung, die sich d\'Nota fix selber aneignat. Wenn du Interesse host, schreib üs gern ausführlich ebbes über di und dei Chor-Erfahrung – nå kennat mir üs glei a Bild vo dir macha.',
+      text: 'Du suchsch an Chor für Geburtstag, Hochzeit oder Scheidung? Dann meld di gern. Du witt mitsinga? Aktuell suacha mir gezielt Tenör und Bässe. Sonscht freiat mir üs über Leit mit richtig viel Chor-Erfahrung, die sich d\'Nota fix selber aneignat. Wenn du Interesse host, schreib üs gern ausführlich ebbes über di und dei Chor-Erfahrung – nå kennat mir üs glei a Bild vo dir macha.',
       form: {
         name: 'Name *',
         namePlaceholder: 'Dei Name',
