@@ -11,6 +11,7 @@ Astro-basierte Version der Website mit Komponenten-Architektur und statischem Ou
 
 - `docker compose up --build`
 - Website: `http://localhost:4321`
+- hej
 
 Hinweise:
 
