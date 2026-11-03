@@ -164,16 +164,16 @@ const de = {
         year: '2026',
         items: [
           {
-            date: '4. Juli 2026',
-            title: 'Salva me',
-            desc: 'Zum 900-jährigen Jubiläum der St.-Verena-Kirche in Fischen gestaltete kalikoer den Gottesdienst musikalisch mit. Auf dem Programm standen Werke von John Rutter, Marco Frisina und Coldplay.',
-            tag: 'Auftritt'
-          },
-          {
             date: '17. & 19. Juli 2026',
             title: 'Are you still listening?',
             desc: 'Im Juli 2026 singt kalikoer aus Immenstadt bekannte Titel aus Streaming, Serien und Filmklassiker. Zwei Abende voller Gänsehaut und großer Melodien – Folge 1 in Blaichach, Folge 2 in der Erlöserkirche Immenstadt.',
             tag: 'Konzert'
+          },
+          {
+            date: '4. Juli 2026',
+            title: 'Salva me',
+            desc: 'Zum 900-jährigen Jubiläum der St.-Verena-Kirche in Fischen gestaltete kalikoer den Gottesdienst musikalisch mit. Auf dem Programm standen Werke von John Rutter, Marco Frisina und Coldplay.',
+            tag: 'Auftritt'
           }
         ]
       },
